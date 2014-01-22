@@ -72,6 +72,8 @@ dependencies[] = flag
 dependencies[] = flag_actions
 ; Homebox
 dependencies[] = homebox
+; LAS
+dependencies[] = las_menu_rebuilder
 ; Location
 dependencies[] = location
 ; Mail
