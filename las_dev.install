@@ -28,6 +28,9 @@ function las_dev_install() {
   variable_set('admin_theme', $admin_theme);
   // activate admin theme when editing a node
   variable_set('node_admin_theme', '1');
+  variable_set('update_notification_threshold','security');
+  variable_set('site_default_country','USA');
+  variable_set('error_level',ERROR_REPORTING_DISPLAY_SOME);
   $blocks = array(
     array(
       'module' => 'system',

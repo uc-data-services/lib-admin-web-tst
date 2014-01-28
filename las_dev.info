@@ -72,8 +72,6 @@ dependencies[] = flag
 dependencies[] = flag_actions
 ; Homebox
 dependencies[] = homebox
-; LAS
-dependencies[] = las_menu_rebuilder
 ; Location
 dependencies[] = location
 ; Mail
@@ -131,4 +129,5 @@ dependencies[] = student_job
 dependencies[] = topbarfooter
 dependencies[] = travel_approval
 dependencies[] = unit
-
+; LAS
+;dependencies[] = las_menu_rebuilder
