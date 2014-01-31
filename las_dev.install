@@ -120,7 +120,6 @@ function las_dev_install() {
     'lhrd_configuration',
     'lhrd_job_rules',
     'staff_job',
-    'topbarfooter',
     'travel_approval',
     'unit'
   );

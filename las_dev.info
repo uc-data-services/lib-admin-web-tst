@@ -126,7 +126,6 @@ dependencies[] = lhrd_job_rules
 dependencies[] = lhrd_student_job_display_suite
 dependencies[] = staff_job
 dependencies[] = student_job
-dependencies[] = topbarfooter
 dependencies[] = travel_approval
 dependencies[] = unit
 ; LAS
