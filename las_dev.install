@@ -107,24 +107,38 @@ function las_dev_install() {
     ->execute();
   // Update the menu router information.
   menu_rebuild();
-  // revert features to ensure they are all installed
-  $features = array(
-    'las_field_bases',
-    'academic_job',
-    'feeds_import',
+
+  theme_enable(array('skeleton_lhrd'));
+  module_enable(array(
     'index_panels',
-    'lhrd_student_job_display_suite',
-    'student_job',
-    'las_permissions_roles',
+    'academic_job',
     'las_userdashboards',
     'lhrd_configuration',
-    'lhrd_job_rules',
+    'lhrd_student_job_display_suite',
+    'student_job',
     'staff_job',
-    'topbarfooter',
-    'travel_approval',
-    'unit'
+    'topbarfooter')
   );
-  features_revert($features);
+  //revert features to ensure they are all installed
+ /**$features = array(
+  'las_field_bases',
+  'academic_job',
+  'feeds_import',
+  'index_panels',
+  'lhrd_student_job_display_suite',
+  'student_job',
+  'las_permissions_roles',
+  'las_userdashboards',
+  'lhrd_configuration',
+  'lhrd_job_rules',
+  'staff_job',
+  'topbarfooter',
+  'travel_approval',
+  'unit'
+  );
+  features_revert($features);**/
+  menu_rebuild();
+
   // ignore any rebuild messages
   node_access_needs_rebuild(FALSE);
   // ignore any other install messages
