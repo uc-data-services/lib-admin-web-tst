@@ -116,6 +116,10 @@ function las_dev_install() {
     'lhrd_configuration',
     'lhrd_student_job_display_suite',
     'student_job',
+    'las_permissions_roles',
+    'las_userdashboards',
+    'lhrd_configuration',
+    'lhrd_job_rules',
     'staff_job',
     'topbarfooter')
   );

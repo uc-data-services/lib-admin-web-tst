@@ -67,9 +67,6 @@ projects[staff_job][subdir] = "contrib"
 projects[student_job][version] = "1.0-beta55"
 projects[student_job][subdir] = "contrib"
 
-projects[topbarfooter][version] = "1.0-beta22"
-projects[topbarfooter][subdir] = "contrib"
-
 projects[travel_approval][version] = "1.0-alpha2"
 projects[travel_approval][subdir] = "contrib"
 
