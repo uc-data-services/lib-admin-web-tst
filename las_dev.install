@@ -108,6 +108,7 @@ function las_dev_install() {
   // Update the menu router information.
   menu_rebuild();
 
+  //we need to enable the theme and modules that depend on fe_blocks
   theme_enable(array('skeleton_lhrd'));
   module_enable(array(
     'index_panels',
@@ -121,28 +122,11 @@ function las_dev_install() {
     'lhrd_configuration',
     'lhrd_job_rules',
     'staff_job',
-    'topbarfooter')
+  )
   );
-  //revert features to ensure they are all installed
- /**$features = array(
-  'las_field_bases',
-  'academic_job',
-  'feeds_import',
-  'index_panels',
-  'lhrd_student_job_display_suite',
-  'student_job',
-  'las_permissions_roles',
-  'las_userdashboards',
-  'lhrd_configuration',
-  'lhrd_job_rules',
-  'staff_job',
-  'topbarfooter',
-  'travel_approval',
-  'unit'
-  );
-  features_revert($features);**/
-  menu_rebuild();
-
+  //we need to rebuild the features for some reason. might try to just do one
+  features_rebuild();
+  features_revert();
   // ignore any rebuild messages
   node_access_needs_rebuild(FALSE);
   // ignore any other install messages
