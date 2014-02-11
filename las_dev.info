@@ -66,6 +66,7 @@ dependencies[] = field_group
 dependencies[] = field_permissions
 dependencies[] = inline_entity_form
 dependencies[] = link
+dependencies[] = cer
 ; Flags
 dependencies[] = flag
 dependencies[] = flag_actions
@@ -89,6 +90,8 @@ dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = tablefield
 dependencies[] = token
+dependencies[] = chosen
+dependencies[] = jquery_update
 ; Panels
 dependencies[] = panels
 dependencies[] = panels_breadcrumbs
@@ -112,23 +115,7 @@ dependencies[] = ckeditor
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
-; Features
-; Features extra
+; Features / Features extra
 dependencies[] = features
 dependencies[] = fe_block
-;dependencies[] = academic_job
-;dependencies[] = feeds_import
-;dependencies[] = index_panels
-;dependencies[] = las_field_bases
-;dependencies[] = las_permissions_roles
-;dependencies[] = las_userdashboards
-;dependencies[] = lhrd_configuration
-;dependencies[] = lhrd_job_rules
-;dependencies[] = lhrd_student_job_display_suite
-;dependencies[] = staff_job
-;dependencies[] = student_job
-;dependencies[] = topbarfooter
-;dependencies[] = travel_approval
-;dependencies[] = unit
-; LAS
-;dependencies[] = las_menu_rebuilder
+dependencies[] = las_chartstrings
