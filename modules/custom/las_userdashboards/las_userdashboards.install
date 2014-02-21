@@ -1,0 +1,10 @@
+<?php
+
+function las_userdashboards_install() {
+  db_update('system')
+    ->fields(array('weight' => 9999))
+    ->condition('name', 'las_userdashboards', '=')
+    ->execute();
+}
+
+?>

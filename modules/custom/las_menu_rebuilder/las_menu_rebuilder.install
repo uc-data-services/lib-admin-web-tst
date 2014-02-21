@@ -1,0 +1,862 @@
+<?php
+/**
+ * @file
+ * Code for the LAS Menu Rebuilder feature.
+ */
+
+/*****************************************************************************/
+menu_delete_links('menu-footer-menu-left');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff',
+    'link_title'    => 'Employees',
+    'menu_name'     => 'menu-footer-menu-left',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'index',
+    'link_title'    => 'General Info',
+    'menu_name'     => 'menu-footer-menu-left',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-footer-menu-middle');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff',
+    'link_title'    => 'Employees',
+    'menu_name'     => 'menu-footer-menu-middle',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'index',
+    'link_title'    => 'General Info',
+    'menu_name'     => 'menu-footer-menu-middle',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-footer-menu-right');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff',
+    'link_title'    => 'Employees',
+    'menu_name'     => 'menu-footer-menu-right',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'index',
+    'link_title'    => 'General Info',
+    'menu_name'     => 'menu-footer-menu-right',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-lhrd-academic-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/academic-jobs',
+    'link_title'    => 'Job Opportunities',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits',
+    'link_title'    => 'Benefits & Work Life',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'new-hires',
+    'link_title'    => 'New Hires',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'academic/professional-development',
+    'link_title'    => 'Professional Development',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'academic/reviews',
+    'link_title'    => 'Reviews',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-46',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'academic/resources',
+    'link_title'    => 'Resources',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-45',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'academic/managers-supervisors',
+    'link_title'    => 'Managers & Supervisors',
+    'menu_name'     => 'menu-lhrd-academic-menu',
+    'weight'        => '-44',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-lhrd-benefits-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/eligibility',
+    'link_title'    => 'Eligibility',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/plans',
+    'link_title'    => 'Plans',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/retirement',
+    'link_title'    => 'Retirement',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/leaves',
+    'link_title'    => 'Leaves',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/life-events',
+    'link_title'    => 'Life Events',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-46',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/workers-comp',
+    'link_title'    => 'Workers Comp',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-45',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/discounts',
+    'link_title'    => 'Discounts',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-44',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits/campus-resources',
+    'link_title'    => 'Campus Resources',
+    'menu_name'     => 'menu-lhrd-benefits-menu',
+    'weight'        => '-43',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-lhrd-jobseekers-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 1,
+    'external'      => 0,
+    'has_children'  => 1,
+    'hidden'        => 0,
+    'link_path'     => '<front>',
+    'link_title'    => 'Job Opportunities',
+    'menu_name'     => 'menu-lhrd-jobseekers-menu',
+    'weight'        => '-50',
+  )
+);
+$jobseekers_menu_id = menu_link_save($las_menu_link['values']);
+
+  $las_menu_link = array(
+    'values' => array(
+      'expanded'      => 0,
+      'external'      => 0,
+      'has_children'  => 0,
+      'hidden'        => 0,
+      'link_path'     => 'job-seekers/academic-jobs',
+      'link_title'    => 'Academic Jobs',
+      'plid'          => $jobseekers_menu_id,
+      'weight'        => '-50',
+    )
+  );
+  menu_link_save($las_menu_link['values']);
+
+  $las_menu_link = array(
+    'values' => array(
+      'expanded'      => 0,
+      'external'      => 0,
+      'has_children'  => 0,
+      'hidden'        => 0,
+      'link_path'     => 'job-seekers/staff-jobs',
+      'link_title'    => 'Staff Jobs',
+      'plid'          => $jobseekers_menu_id,
+      'weight'        => '-49',
+    )
+  );
+  menu_link_save($las_menu_link['values']);
+
+  $las_menu_link = array(
+    'values' => array(
+      'expanded'      => 0,
+      'external'      => 0,
+      'has_children'  => 0,
+      'hidden'        => 0,
+      'link_path'     => 'job-seekers/student-jobs',
+      'link_title'    => 'Student Jobs',
+      'plid'          => $jobseekers_menu_id,
+      'weight'        => '-48',
+    )
+  );
+  menu_link_save($las_menu_link['values']);
+
+  $las_menu_link = array(
+    'values' => array(
+      'expanded'      => 0,
+      'external'      => 0,
+      'has_children'  => 0,
+      'hidden'        => 0,
+      'link_path'     => 'job-seekers/volunteer-opportunities',
+      'link_title'    => 'Volunteer Opportunities',
+      'plid'          => $jobseekers_menu_id,
+      'weight'        => '-47',
+    )
+  );
+  menu_link_save($las_menu_link['values']);
+
+
+  $las_menu_link = array(
+    'values' => array(
+      'expanded'      => 0,
+      'external'      => 0,
+      'has_children'  => 0,
+      'hidden'        => 0,
+      'link_path'     => 'job-seekers/visiting-scholars',
+      'link_title'    => 'Visiting Scholars',
+      'plid'          => $jobseekers_menu_id,
+      'weight'        => '-46',
+    )
+  );
+  menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/diversity',
+    'link_title'    => 'Diversity',
+    'menu_name'     => 'menu-lhrd-jobseekers-menu',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/benefits',
+    'link_title'    => 'Benefits',
+    'menu_name'     => 'menu-lhrd-jobseekers-menu',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/campus-life',
+    'link_title'    => 'Campus Life',
+    'menu_name'     => 'menu-lhrd-jobseekers-menu',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-lhrd-staff-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/staff-jobs',
+    'link_title'    => 'Job Opportunities',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'benefits',
+    'link_title'    => 'Benefits & Work Life',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff/learning-and-development',
+    'link_title'    => 'Learning & Development',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff/evaluations',
+    'link_title'    => 'Evaluations',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff/managers-supervisors',
+    'link_title'    => 'Managers & Supervisors',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-46',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff/resources',
+    'link_title'    => 'Resources',
+    'menu_name'     => 'menu-lhrd-staff-menu',
+    'weight'        => '-45',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-lhrd-student-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers/student-jobs',
+    'link_title'    => 'Job Opportunities',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/hiring-process',
+    'link_title'    => 'Hiring Process',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/work-study',
+    'link_title'    => 'Work Study',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/grad-students',
+    'link_title'    => 'Graduate Students',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/pay-time',
+    'link_title'    => 'Payroll & Timekeeping',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-46',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/handbook',
+    'link_title'    => 'Student Handbook',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-45',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student/managers-supervisors',
+    'link_title'    => 'Managers & Supervisors',
+    'menu_name'     => 'menu-lhrd-student-menu',
+    'weight'        => '-44',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('main-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'job-seekers',
+    'link_title'    => 'JOB SEEKERS',
+    'menu_name'     => 'main-menu',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'honzi-mainmenu-jobseekers',
+        ),
+      ),
+    ),
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'academic',
+    'link_title'    => 'ACADEMIC',
+    'menu_name'     => 'main-menu',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'honzi-mainmenu-academic',
+        ),
+      ),
+    ),
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'staff',
+    'link_title'    => 'STAFF',
+    'menu_name'     => 'main-menu',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'honzi-mainmenu-staff',
+        ),
+      ),
+    ),
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'student',
+    'link_title'    => 'STUDENTS',
+    'menu_name'     => 'main-menu',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'honzi-mainmenu-students',
+        ),
+      ),
+    ),
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-top-bar');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'http://lib.berkeley.edu/lhrd/contact',
+    'link_title'    => 'Contact',
+    'menu_name'     => 'menu-top-bar',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'forms',
+    'link_title'    => 'Forms',
+    'menu_name'     => 'menu-top-bar',
+    'weight'        => '-49',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'http://lib.berkeley.edu/lhrd/policies',
+    'link_title'    => 'Policies',
+    'menu_name'     => 'menu-top-bar',
+    'weight'        => '-48',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'index',
+    'link_title'    => 'Services',
+    'menu_name'     => 'menu-top-bar',
+    'weight'        => '-47',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'dashboard',
+    'link_title'    => 'My Dashboard',
+    'menu_name'     => 'menu-top-bar',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'usermenuleft',
+        ),
+      ),
+    ),
+    'weight'        => '-46',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'dashboard/hr',
+    'link_title'    => 'My Dashboard',
+    'menu_name'     => 'menu-top-bar',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'usermenuleft',
+        ),
+      ),
+    ),
+    'weight'        => '-45',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'user/login',
+    'link_title'    => 'Login',
+    'menu_name'     => 'menu-top-bar',
+    'options'       => array(
+      'attributes'    => array(
+        'class'         => array(
+          0               => 'usermenuleft',
+        ),
+      ),
+    ),
+    'weight'        => '-44',
+  )
+);
+menu_link_save($las_menu_link['values']);
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'user/logout',
+    'link_title'    => 'Logout',
+    'menu_name'     => 'menu-top-bar',
+    'weight'        => '-43',
+  )
+);
+menu_link_save($las_menu_link['values']);
+/*****************************************************************************/
+menu_delete_links('menu-supervisor-dashboard-menu');
+
+$las_menu_link = array(
+  'values' => array(
+    'expanded'      => 0,
+    'external'      => 0,
+    'has_children'  => 0,
+    'hidden'        => 0,
+    'link_path'     => 'node/add/job-student',
+    'link_title'    => 'Create New Student Job',
+    'menu_name'     => 'menu-supervisor-dashboard-menu',
+    'weight'        => '-50',
+  )
+);
+menu_link_save($las_menu_link['values']);

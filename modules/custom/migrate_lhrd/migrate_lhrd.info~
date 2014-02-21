@@ -1,0 +1,13 @@
+name = "Migrate from LHRD DB"
+description = "Module to migrate user & organizaiton information into Drupal 7"
+package = "Development"
+core = 7.x
+
+dependencies[] = migrate
+
+#  include the files that contain your Migrate classes 
+files[] = migrate_lhrd.migrate.inc
+#files[] = user.inc
+#files[] = forum.inc
+#files[] = gallery.inc
+#files[] = roles.inc

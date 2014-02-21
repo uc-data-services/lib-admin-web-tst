@@ -1,0 +1,12 @@
+<?php
+function migrate_lhrd_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'XyzUser' => array('class_name' => 'MigrateXyzUserMigration'),
+      'XyzArticle' => array('class_name' => 'MigrateXyzArticleMigration'),
+    ),
+  );
+  return $api;
+}
+?>

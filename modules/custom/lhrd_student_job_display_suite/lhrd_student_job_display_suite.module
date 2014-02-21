@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LHRD Student Job Display Suite feature.
+ */
+
+include_once 'lhrd_student_job_display_suite.features.inc';

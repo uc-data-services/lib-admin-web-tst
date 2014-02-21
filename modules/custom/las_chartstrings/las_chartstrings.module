@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LAS Chartstrings feature.
+ */
+
+include_once 'las_chartstrings.features.inc';

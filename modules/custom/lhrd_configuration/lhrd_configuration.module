@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LHRD Configuration feature.
+ */
+
+include_once 'lhrd_configuration.features.inc';

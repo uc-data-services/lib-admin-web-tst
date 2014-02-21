@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LHRD Job Rules feature.
+ */
+
+include_once 'lhrd_job_rules.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Index_Panels feature.
+ */
+
+include_once 'index_panels.features.inc';

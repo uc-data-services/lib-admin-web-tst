@@ -1,0 +1,5 @@
+name = LAS Menu Rebuilder
+core = 7.x
+package = LAS
+version = 7.x-1.0-beta1
+description = This module resets the footer_menu_left, footer_menu_middle, footer_menu_right, LHRD Academic Menu, LHRD Benefits Menu, LHRD JobSeekers Menu, LHRD Staff Menu, LHRD Student Menu, Main Menu, and Top Bar menus to their default values. This module can be disabled after being enabled, as it only resets menus upon enabling. ANY MENU LINKS NOT IN THE las_menu_rebuilder.install FILE WILL BE DELETED! ONLY USE THIS MODULE IF YOU KNOW WHAT YOU ARE DOING!

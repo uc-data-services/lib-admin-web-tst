@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LAS UserDashboards feature.
+ */
+
+include_once 'las_userdashboards.features.inc';

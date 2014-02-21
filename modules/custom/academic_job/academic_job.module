@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Academic Job feature.
+ */
+
+include_once 'academic_job.features.inc';
