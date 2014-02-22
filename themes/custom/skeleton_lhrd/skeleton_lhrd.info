@@ -1,0 +1,34 @@
+name = Skeleton_LHRD
+description = Custom LHRD theme based off the Skeleton theme.
+version = VERSION
+core = 7.x
+base theme = skeleton
+
+stylesheets[all][] = css/style.css
+
+regions[topbar] = TopBar
+regions[header] = Header
+
+regions[highlighted] = Highlighted
+
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+
+regions[featured_left] = Featured left
+regions[featured_right] = Featured right
+
+regions[footer_first] = Footer first
+regions[footer_second] = Footer second
+regions[footer_third] = Footer third
+regions[footer] = Footer
+
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+; Information added by drupal.org packaging script on 2013-02-17
+version = "7.x-1.2"
+core = "7.x"
+project = "skeleton_lhrd"
+datestamp = "1361062289"
+

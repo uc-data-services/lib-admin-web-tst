@@ -1,0 +1,48 @@
+#color_scheme_form #palette .form-item{
+    width: 25em
+}
+#color_scheme_form #palette .form-item label{
+    width: 15em
+}
+#preview{
+    color: #444;
+    margin: 0 0 20px 0;
+    outline: 0 none;
+    padding: 20px;
+    vertical-align: baseline;
+    width: 650px
+}
+#preview a{
+    color: #2883DE
+}
+#preview a:hover{
+    color: #000
+}
+#preview-content{
+    padding: 10px 0 20px 0;
+    overflow: hidden
+}
+#preview h1{
+    color: #181818
+}
+#preview #site-name a{
+    color: #262626;
+    font-size: 240%;
+    font-weight: bold
+}
+#preview #site-name a:hover{
+    color: #3253ad
+}
+#preview #site-slogan{
+    color: #7d7d7d;
+    font-size: 120%
+}
+#wrapper{
+    display:block;
+    border-top: 10px solid #375199;
+    margin-top: 20px;
+    overflow:hidden
+}
+#wrapper-inside{
+    border-top: 5px solid #4565be
+}
