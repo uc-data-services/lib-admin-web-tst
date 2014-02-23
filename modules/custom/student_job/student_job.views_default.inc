@@ -258,7 +258,7 @@ function student_job_views_default_views() {
   $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
   $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
   $handler->display->display_options['fields']['field_student_job_workstudy']['element_label_colon'] = FALSE;
-  /* Field: Content: Department */
+  /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
   $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
@@ -476,7 +476,7 @@ function student_job_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Department */
+  /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
   $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';

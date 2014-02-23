@@ -53,6 +53,7 @@ features[features_api][] = api:2
 features[field_group][] = group_work_schedule|node|job_student|form
 features[field_instance][] = node-job_student-field_las_supervisor
 features[field_instance][] = node-job_student-field_las_unit_chartstring
+features[field_instance][] = node-job_student-field_las_workstudy
 features[field_instance][] = node-job_student-field_lhrd_job_qdesired
 features[field_instance][] = node-job_student-field_lhrd_krns_is_stdn_super
 features[field_instance][] = node-job_student-field_lhrd_kronos_supervisor
