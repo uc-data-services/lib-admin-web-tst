@@ -128,7 +128,7 @@ function lhrd_configuration_strongarm() {
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 0,
     'default_logo' => 0,
-    'logo_path' => 'sites/all/themes/custom/skeleton_lhrd/images/lhrd.png',
+    'logo_path' => 'profiles/las_dev/themes/custom/skeleton_lhrd/images/lhrd.png',
     'logo_upload' => '',
     'default_favicon' => 1,
     'favicon_path' => '',
