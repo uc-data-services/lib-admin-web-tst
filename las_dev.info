@@ -86,6 +86,7 @@ dependencies[] = fillpdf
 dependencies[] = job_scheduler
 dependencies[] = menu_attributes
 dependencies[] = menu_trail_by_path
+dependencies[] = module_filter
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = tablefield
