@@ -115,9 +115,6 @@ projects[maillog][subdir] = "contrib"
 projects[auto_entitylabel][version] = "1.x-dev"
 projects[auto_entitylabel][subdir] = "contrib"
 
-projects[auto_nodetitle][version] = "1.0"
-projects[auto_nodetitle][subdir] = "contrib"
-
 projects[diff][version] = "3.2"
 projects[diff][subdir] = "contrib"
 

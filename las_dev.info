@@ -78,7 +78,6 @@ dependencies[] = location
 dependencies[] = maillog
 ; Other
 dependencies[] = auto_entitylabel
-dependencies[] = auto_nodetitle
 dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entity_token
