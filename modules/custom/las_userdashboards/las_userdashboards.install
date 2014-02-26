@@ -5,6 +5,28 @@ function las_userdashboards_install() {
     ->fields(array('weight' => 9999))
     ->condition('name', 'las_userdashboards', '=')
     ->execute();
+
+  // list of views to disable
+  $viewnames = array(
+    'control_content',
+    'control_content_panes',
+    'control_my_content_panes',
+    'control_terms',
+    'control_users',
+    'control_users_panes',
+  );
+  // grab list of views that are already disabled
+  $views_status = variable_get('views_defaults', array());
+  // add views to be disabled to the list
+  foreach ($viewnames as $key => $viewname) {
+    $views_status[$viewname] = TRUE;
+  }
+  // reset the variable with the new list
+  variable_set('views_defaults', $views_status);
+  // empty cache now
+  if (function_exists('views_invalidate_cache')) {
+    views_invalidate_cache();
+  }
 }
 
 ?>
