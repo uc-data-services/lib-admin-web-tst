@@ -70,8 +70,6 @@ dependencies[] = cer
 ; Flags
 dependencies[] = flag
 dependencies[] = flag_actions
-; Homebox
-dependencies[] = homebox
 ; Location
 dependencies[] = location
 ; Mail

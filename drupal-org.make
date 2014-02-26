@@ -103,9 +103,6 @@ projects[link][subdir] = "contrib"
 projects[flag][version] = "3.2"
 projects[flag][subdir] = "contrib"
 
-projects[homebox][version] = "2.0-beta6"
-projects[homebox][subdir] = "contrib"
-
 projects[location][version] = "3.1"
 projects[location][subdir] = "contrib"
 
