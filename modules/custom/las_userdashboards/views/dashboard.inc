@@ -241,15 +241,18 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_opera
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Author';
 /* Field: Content: Department */
 $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
 $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
 $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
-$handler->display->display_options['fields']['field_unit']['label'] = '';
-$handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_unit']['settings'] = array(
   'link' => 0,
 );
@@ -257,8 +260,7 @@ $handler->display->display_options['fields']['field_unit']['settings'] = array(
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -299,6 +301,10 @@ $handler->display->display_options['pager']['options']['expose']['items_per_page
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Content: Author */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Bulk operations: Content */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -464,15 +470,18 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_opera
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Author';
 /* Field: Content: Department */
 $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
 $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
 $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
-$handler->display->display_options['fields']['field_unit']['label'] = '';
-$handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_unit']['settings'] = array(
   'link' => 0,
 );
@@ -480,8 +489,7 @@ $handler->display->display_options['fields']['field_unit']['settings'] = array(
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -516,6 +524,10 @@ $handler->display->display_options['pager']['options']['expose']['items_per_page
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Content: Author */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Bulk operations: Content */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -681,15 +693,18 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_opera
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Author';
 /* Field: Content: Department */
 $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
 $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
 $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
-$handler->display->display_options['fields']['field_unit']['label'] = '';
-$handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_unit']['settings'] = array(
   'link' => 0,
 );
@@ -697,8 +712,7 @@ $handler->display->display_options['fields']['field_unit']['settings'] = array(
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -725,24 +739,24 @@ $handler->display->display_options['defaults']['fields'] = FALSE;
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 /* Field: Content: Department */
 $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
 $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
 $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
-$handler->display->display_options['fields']['field_unit']['label'] = '';
-$handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_unit']['settings'] = array(
   'link' => 0,
 );
+/* Field: Content: Job Request Status */
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['field'] = 'field_lhrd_student_job_workflow';
 /* Field: Content: Edit link */
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: User: Current */
@@ -771,10 +785,15 @@ $translatables['las_dashboard_views'] = array(
   t('author'),
   t('StudentSupervisorVBO'),
   t('- Choose an operation -'),
+  t('Title'),
+  t('Author'),
+  t('Department'),
+  t('Edit'),
   t('HRAnalystVBO'),
   t('LBSAnalystVBO'),
   t('YourJobs'),
   t('Your Jobs'),
+  t('Job Request Status'),
   t('View panes'),
 );
 
