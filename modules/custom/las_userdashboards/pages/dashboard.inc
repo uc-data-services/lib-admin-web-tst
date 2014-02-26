@@ -121,7 +121,20 @@ $display->panels = array();
   $pane->type = 'overview_content';
   $pane->subtype = 'overview_content';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'types' => array(
       'article' => 'article',
@@ -154,7 +167,20 @@ $display->panels = array();
   $pane->type = 'views_panes';
   $pane->subtype = 'control_users_panes-pane_tc_new_users';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'items_per_page' => '10',
   );
@@ -175,7 +201,20 @@ $display->panels = array();
   $pane->type = 'views_panes';
   $pane->subtype = 'control_content_panes-pane_tc_new';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'items_per_page' => '10',
   );
@@ -213,3 +252,4 @@ $display->hide_title = PANELS_TITLE_FIXED;
 $display->title_pane = '0';
 $handler->conf['display'] = $display;
 $page->default_handlers[$handler->name] = $handler;
+
