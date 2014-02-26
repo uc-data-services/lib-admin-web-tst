@@ -76,6 +76,13 @@ $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['relationships']['uid']['id'] = 'uid';
 $handler->display->display_options['relationships']['uid']['table'] = 'node';
 $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+/* Relationship: Flags: unpublish_student_job */
+$handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+$handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'unpublish_student_job';
+$handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Bulk operations: Content */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -261,6 +268,18 @@ $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+/* Field: Content: Job Request Status */
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['field'] = 'field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['label'] = 'Job Status';
+/* Field: Flags: Flag link */
+$handler->display->display_options['fields']['ops']['id'] = 'ops';
+$handler->display->display_options['fields']['ops']['table'] = 'flagging';
+$handler->display->display_options['fields']['ops']['field'] = 'ops';
+$handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+$handler->display->display_options['fields']['ops']['label'] = 'Update Status';
+$handler->display->display_options['fields']['ops']['link_type'] = 'normal';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -305,6 +324,12 @@ $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['relationships']['uid']['id'] = 'uid';
 $handler->display->display_options['relationships']['uid']['table'] = 'node';
 $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+/* Relationship: Flags: publish_job */
+$handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+$handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'publish_job';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Bulk operations: Content */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -490,6 +515,17 @@ $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+/* Field: Content: Job Request Status */
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
+$handler->display->display_options['fields']['field_lhrd_student_job_workflow']['field'] = 'field_lhrd_student_job_workflow';
+/* Field: Flags: Flag link */
+$handler->display->display_options['fields']['ops']['id'] = 'ops';
+$handler->display->display_options['fields']['ops']['table'] = 'flagging';
+$handler->display->display_options['fields']['ops']['field'] = 'ops';
+$handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+$handler->display->display_options['fields']['ops']['label'] = 'Update Status';
+$handler->display->display_options['fields']['ops']['link_type'] = 'normal';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -500,6 +536,14 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'job_student' => 'job_student',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Job Request Status (field_lhrd_student_job_workflow) */
+$handler->display->display_options['filters']['field_lhrd_student_job_workflow_value']['id'] = 'field_lhrd_student_job_workflow_value';
+$handler->display->display_options['filters']['field_lhrd_student_job_workflow_value']['table'] = 'field_data_field_lhrd_student_job_workflow';
+$handler->display->display_options['filters']['field_lhrd_student_job_workflow_value']['field'] = 'field_lhrd_student_job_workflow_value';
+$handler->display->display_options['filters']['field_lhrd_student_job_workflow_value']['value'] = array(
+  'Request' => 'Request',
+  'Published' => 'Published',
+);
 $handler->display->display_options['path'] = 'admin/dashboard/hr-analyst';
 $handler->display->display_options['menu']['type'] = 'tab';
 $handler->display->display_options['menu']['title'] = 'HR Analyst';
@@ -528,6 +572,13 @@ $handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['relationships']['uid']['id'] = 'uid';
 $handler->display->display_options['relationships']['uid']['table'] = 'node';
 $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+/* Relationship: Flags: las_lbschartstringcheck */
+$handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+$handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+$handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'las_lbschartstringcheck';
+$handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Bulk operations: Content */
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -713,6 +764,12 @@ $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
 $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+/* Field: Flags: Flag link */
+$handler->display->display_options['fields']['ops']['id'] = 'ops';
+$handler->display->display_options['fields']['ops']['table'] = 'flagging';
+$handler->display->display_options['fields']['ops']['field'] = 'ops';
+$handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+$handler->display->display_options['fields']['ops']['label'] = 'Chartstring Check';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Content: Type */
@@ -723,6 +780,12 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'job_student' => 'job_student',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Flags: Flagged */
+$handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+$handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+$handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+$handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+$handler->display->display_options['filters']['flagged']['value'] = '0';
 $handler->display->display_options['path'] = 'admin/dashboard/lbs-analyst';
 $handler->display->display_options['menu']['type'] = 'tab';
 $handler->display->display_options['menu']['title'] = 'LBS Analyst';
@@ -784,16 +847,20 @@ $translatables['las_dashboard_views'] = array(
   t('There are currently no jobs that meet your criteria.'),
   t('author'),
   t('StudentSupervisorVBO'),
+  t('flag'),
   t('- Choose an operation -'),
   t('Title'),
   t('Author'),
   t('Department'),
   t('Edit'),
+  t('Job Status'),
+  t('Update Status'),
   t('HRAnalystVBO'),
+  t('Job Request Status'),
   t('LBSAnalystVBO'),
+  t('Chartstring Check'),
   t('YourJobs'),
   t('Your Jobs'),
-  t('Job Request Status'),
   t('View panes'),
 );
 
