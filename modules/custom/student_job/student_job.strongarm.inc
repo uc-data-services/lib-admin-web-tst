@@ -99,7 +99,7 @@ function student_job_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'workflow' => array(
           'weight' => '17',

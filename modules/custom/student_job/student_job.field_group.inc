@@ -21,7 +21,7 @@ function student_job_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Work Schedule',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_student_job_hours',
       1 => 'field_student_job_maxweeklyhours',
