@@ -419,14 +419,21 @@ function las_permissions_roles_user_default_permissions() {
   // Exported permission: 'flag publish_job'.
   $permissions['flag publish_job'] = array(
     'name' => 'flag publish_job',
-    'roles' => array(),
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'administrator' => 'administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'flag unpublish_student_job'.
   $permissions['flag unpublish_student_job'] = array(
     'name' => 'flag unpublish_student_job',
-    'roles' => array(),
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
     'module' => 'flag',
   );
 
@@ -456,14 +463,21 @@ function las_permissions_roles_user_default_permissions() {
   // Exported permission: 'unflag publish_job'.
   $permissions['unflag publish_job'] = array(
     'name' => 'unflag publish_job',
-    'roles' => array(),
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'administrator' => 'administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'unflag unpublish_student_job'.
   $permissions['unflag unpublish_student_job'] = array(
     'name' => 'unflag unpublish_student_job',
-    'roles' => array(),
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
     'module' => 'flag',
   );
 
@@ -495,6 +509,18 @@ function las_permissions_roles_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view the administration theme'.
+  $permissions['view the administration theme'] = array(
+    'name' => 'view the administration theme',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'system',
   );
 
   // Exported permission: 'view revisions'.
