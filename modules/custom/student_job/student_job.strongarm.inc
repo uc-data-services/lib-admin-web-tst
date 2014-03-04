@@ -115,7 +115,7 @@ function student_job_strongarm() {
             'visible' => TRUE,
           ),
           'default' => array(
-            'weight' => '10',
+            'weight' => '18',
             'visible' => FALSE,
           ),
         ),

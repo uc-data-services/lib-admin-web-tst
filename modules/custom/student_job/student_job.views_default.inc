@@ -1,14 +1,14 @@
 <?php
-  /**
-   * @file
-   * student_job.views_default.inc
-   */
+/**
+ * @file
+ * student_job.views_default.inc
+ */
 
-  /**
-   * Implements hook_views_default_views().
-   */
-  function student_job_views_default_views() {
-    $export = array();
+/**
+ * Implements hook_views_default_views().
+ */
+function student_job_views_default_views() {
+  $export = array();
 
   $view = new view();
   $view->name = 'view_student_jobs';
@@ -529,7 +529,6 @@
     t('Content pane 2'),
     t('View panes'),
   );
-
   $export['view_student_jobs'] = $view;
 
   return $export;

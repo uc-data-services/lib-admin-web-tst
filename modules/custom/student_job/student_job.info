@@ -102,7 +102,6 @@ features[variable][] = node_options_job_student
 features[variable][] = node_preview_job_student
 features[variable][] = node_submitted_job_student
 features[variable][] = pathauto_node_job_student_pattern
-features[views_view][] = supervisor_user_view
 features[views_view][] = view_student_jobs
 features_exclude[field_base][field_las_new_chartstring] = field_las_new_chartstring
 features_exclude[field_base][field_las_add_new_chartstring] = field_las_add_new_chartstring
