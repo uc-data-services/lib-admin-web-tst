@@ -1,7 +1,7 @@
 name = LHRD Student Job Display Suite
 core = 7.x
 package = Features
-version = 7.x-1.0-beta10
+version = 7.x-1.0-beta11
 project = lhrd_student_job_display_suite
 dependencies[] = ctools
 dependencies[] = ds
@@ -16,6 +16,7 @@ dependencies[] = student_job
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = panels_mini:panels_default:1
+features[ds_field_settings][] = node|job_student|full
 features[ds_fields][] = lhrd_jobpage_rightcol
 features[ds_fields][] = lhrd_returntostudentjobpage
 features[ds_layout_settings][] = node|job_student|form

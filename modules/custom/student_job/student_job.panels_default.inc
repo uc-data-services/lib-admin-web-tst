@@ -51,7 +51,7 @@ function student_job_default_panels_mini() {
 	<li>Fill out the application and bring it to 110 Doe Library to arrange an interview with Judy Deliramich, Student Recruitment Coordinator.</li>
 </ol>
 
-<p>If you have any questions, <a href="../contact">contact the Student Employment Coordinator</a>.</p>
+<p>If you have any questions, <a href="contact">contact the Student Employment Coordinator</a>.</p>
 ',
       'format' => 'filtered_html',
       'substitute' => TRUE,

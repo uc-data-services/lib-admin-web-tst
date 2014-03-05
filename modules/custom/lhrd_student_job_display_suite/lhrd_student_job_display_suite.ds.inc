@@ -5,6 +5,46 @@
  */
 
 /**
+ * Implements hook_ds_field_settings_info().
+ */
+function lhrd_student_job_display_suite_ds_field_settings_info() {
+  $export = array();
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|job_student|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'job_student';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'lhrd_returntostudentjobpage' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'lhrd_jobpage_rightcol' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:3:{s:7:"context";a:1:{i:0;s:25:"argument_entity_id:node_1";}s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:11:"panels_mini";s:7:"subtype";s:31:"lhrd_howtoapply_student_jobpage";}',
+        'load_terms' => 0,
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|job_student|full'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_custom_fields_info().
  */
 function lhrd_student_job_display_suite_ds_custom_fields_info() {
@@ -47,7 +87,8 @@ function lhrd_student_job_display_suite_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="../student-jobs">Return to the student library job postings</a>',
+      'value' => '<p><a href="job-seekers/student-jobs">Return to the student library job postings</a></p>
+',
       'format' => 'filtered_html',
     ),
     'use_token' => 0,
@@ -152,20 +193,20 @@ function lhrd_student_job_display_suite_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'lhrd_returntostudentjobpage',
-        1 => 'flag_publish_job',
-        2 => 'group_jobpage_rightcol',
-        3 => 'title',
-        4 => 'lhrd_jobpage_rightcol',
-        5 => 'lhrd_studjobnid_ds',
+        1 => 'group_jobpage_rightcol',
+        2 => 'flag_publish_job',
+        3 => 'lhrd_jobpage_rightcol',
+        4 => 'title',
+        5 => 'field_las_supervisor',
         6 => 'field_unit',
         7 => 'field_student_job_classification',
         8 => 'field_student_job_workstudy',
-        9 => 'lhrd_workschedule_ds',
-        10 => 'field_student_job_hours',
-        11 => 'field_student_job_minshifthours',
-        12 => 'field_student_job_minweeklyhours',
-        13 => 'field_student_job_maxweeklyhours',
-        14 => 'lhrd_jobdescription_ds',
+        9 => 'group_jobhours',
+        10 => 'group_jobinfo',
+        11 => 'field_student_job_hours',
+        12 => 'field_student_job_minshifthours',
+        13 => 'field_student_job_minweeklyhours',
+        14 => 'field_student_job_maxweeklyhours',
         15 => 'field_student_job_duties',
         16 => 'field_student_job_q_required',
         17 => 'field_student_job_q_desired',
@@ -174,20 +215,20 @@ function lhrd_student_job_display_suite_ds_layout_settings_info() {
     ),
     'fields' => array(
       'lhrd_returntostudentjobpage' => 'ds_content',
-      'flag_publish_job' => 'ds_content',
       'group_jobpage_rightcol' => 'ds_content',
-      'title' => 'ds_content',
+      'flag_publish_job' => 'ds_content',
       'lhrd_jobpage_rightcol' => 'ds_content',
-      'lhrd_studjobnid_ds' => 'ds_content',
+      'title' => 'ds_content',
+      'field_las_supervisor' => 'ds_content',
       'field_unit' => 'ds_content',
       'field_student_job_classification' => 'ds_content',
       'field_student_job_workstudy' => 'ds_content',
-      'lhrd_workschedule_ds' => 'ds_content',
+      'group_jobhours' => 'ds_content',
+      'group_jobinfo' => 'ds_content',
       'field_student_job_hours' => 'ds_content',
       'field_student_job_minshifthours' => 'ds_content',
       'field_student_job_minweeklyhours' => 'ds_content',
       'field_student_job_maxweeklyhours' => 'ds_content',
-      'lhrd_jobdescription_ds' => 'ds_content',
       'field_student_job_duties' => 'ds_content',
       'field_student_job_q_required' => 'ds_content',
       'field_student_job_q_desired' => 'ds_content',
