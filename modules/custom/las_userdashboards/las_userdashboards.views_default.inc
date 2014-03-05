@@ -65,8 +65,8 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
 
-  /* Display: StudentSupervisorVBO */
-  $handler = $view->new_display('page', 'StudentSupervisorVBO', 'page_1');
+  /* Display: JobRequestsVBO */
+  $handler = $view->new_display('page', 'JobRequestsVBO', 'page_1');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -370,15 +370,15 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
-  $handler->display->display_options['path'] = 'admin/dashboard/student-supervisor';
+  $handler->display->display_options['path'] = 'admin/dashboard/job-requests';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Job Requests';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: HRAnalystVBO */
-  $handler = $view->new_display('page', 'HRAnalystVBO', 'page_2');
+  /* Display: ManageJobsVBO */
+  $handler = $view->new_display('page', 'ManageJobsVBO', 'page_2');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -682,7 +682,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
-  $handler->display->display_options['path'] = 'admin/dashboard/hr-analyst';
+  $handler->display->display_options['path'] = 'admin/dashboard/manage-jobs';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Manage Jobs';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -1089,7 +1089,7 @@ function las_userdashboards_views_default_views() {
     t('last »'),
     t('There are currently no jobs that meet your criteria.'),
     t('author'),
-    t('StudentSupervisorVBO'),
+    t('JobRequestsVBO'),
     t('flag'),
     t('- Choose an operation -'),
     t('Title'),
@@ -1098,7 +1098,7 @@ function las_userdashboards_views_default_views() {
     t('Job Status'),
     t('Update Status'),
     t('Edit'),
-    t('HRAnalystVBO'),
+    t('ManageJobsVBO'),
     t('Job Request Status'),
     t('LBSAnalystVBO'),
     t('Chartstring Check'),
