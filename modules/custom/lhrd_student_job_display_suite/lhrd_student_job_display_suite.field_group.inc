@@ -21,8 +21,13 @@ function lhrd_student_job_display_suite_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Hours',
-    'weight' => '26',
-    'children' => array(),
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_student_job_hours',
+      1 => 'field_student_job_maxweeklyhours',
+      2 => 'field_student_job_minshifthours',
+      3 => 'field_student_job_minweeklyhours',
+    ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -45,10 +50,12 @@ function lhrd_student_job_display_suite_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Job Information',
-    'weight' => '27',
+    'weight' => '8',
     'children' => array(
-      0 => 'field_lhrd_kronos_supervisor',
-      1 => 'field_student_job_numtohire',
+      0 => 'field_student_job_duties',
+      1 => 'field_student_job_notes',
+      2 => 'field_student_job_q_desired',
+      3 => 'field_student_job_q_required',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

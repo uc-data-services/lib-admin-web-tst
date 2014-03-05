@@ -138,7 +138,7 @@ function lhrd_student_job_display_suite_default_panels_mini() {
 	<li>Fill out the application and bring it to 110 Doe Library to arrange an interview with Judy Deliramich, Student Recruitment Coordinator.</li>
 </ol>
 
-<p><strong>Questions?</strong> <a href="../../contact">Contact Student Employment</a></p>
+<p><strong>Questions?</strong> <a href="contact">Contact Student Employment</a></p>
 
 <p><strong>Student Employment<br />
 office hours:</strong><br />
@@ -147,7 +147,7 @@ office hours:</strong><br />
 noon to 1 p.m.)</p>
 ',
       'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
