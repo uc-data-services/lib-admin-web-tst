@@ -81,6 +81,66 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'name' => 'name',
+    'field_unit' => 'field_unit',
+    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'ops' => 'ops',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_unit' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_lhrd_student_job_workflow' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'ops' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -333,6 +393,66 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'name' => 'name',
+    'field_unit' => 'field_unit',
+    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'ops' => 'ops',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_unit' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_lhrd_student_job_workflow' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'ops' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -586,6 +706,58 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'name' => 'name',
+    'field_unit' => 'field_unit',
+    'ops' => 'ops',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_unit' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'ops' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -820,6 +992,46 @@ function las_userdashboards_views_default_views() {
   $handler = $view->new_display('panel_pane', 'YourJobs', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Your Jobs';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_unit' => 'field_unit',
+    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_unit' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_lhrd_student_job_workflow' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
