@@ -21,12 +21,6 @@ function student_job_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'skeleton_lhrd' => array(
         'region' => '',
         'status' => 0,
@@ -47,12 +41,6 @@ function student_job_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'skeleton_lhrd' => array(
         'region' => '',
         'status' => 0,
@@ -73,12 +61,6 @@ function student_job_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'skeleton_lhrd' => array(
         'region' => '',
         'status' => 0,
