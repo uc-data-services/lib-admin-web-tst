@@ -370,6 +370,19 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/dashboard/job-requests';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Job Requests';
@@ -645,6 +658,13 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_unit']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Chartstring */
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['field'] = 'field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Job Request Status */
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
@@ -683,6 +703,19 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/dashboard/manage-jobs';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Manage Jobs';
@@ -982,6 +1015,19 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/dashboard/lbs-analyst';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'LBS Analyst';
@@ -1099,7 +1145,9 @@ function las_userdashboards_views_default_views() {
     t('Job Status'),
     t('Update Status'),
     t('Edit'),
+    t('Search Terms'),
     t('ManageJobsVBO'),
+    t('Chartstring'),
     t('Job Request Status'),
     t('LBSAnalystVBO'),
     t('Chartstring Check'),
