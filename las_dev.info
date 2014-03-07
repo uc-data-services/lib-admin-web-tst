@@ -8,6 +8,7 @@ core = "7.x"
 ; ----------
 ; Administration
 dependencies[] = admin_menu
+dependencies[] = admin_theme
 ; CCK
 dependencies[] = location_cck
 ; Chaos tool suite
@@ -58,6 +59,7 @@ dependencies[] = ds_ui
 ; Feeds
 dependencies[] = feeds
 dependencies[] = feeds_ui
+dependencies[] = feeds_user_cas_field
 ; Fields
 dependencies[] = computed_field
 dependencies[] = conditional_fields
@@ -90,6 +92,7 @@ dependencies[] = tablefield
 dependencies[] = token
 dependencies[] = chosen
 dependencies[] = jquery_update
+dependencies[] = poormanscron
 ; Panels
 dependencies[] = panels
 dependencies[] = panels_breadcrumbs
@@ -107,13 +110,18 @@ dependencies[] = rules_forms
 dependencies[] = rules_scheduler
 ; SEO
 dependencies[] = page_title
+; UUID
+dependencies[] = uuid
 ; User interface
 dependencies[] = ckeditor
 ; Views
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
+dependencies[] = views_unpublished
 ; Features / Features extra
 dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = las_chartstrings
+dependencies[] = las_user
+dependencies[] = uuid_features
