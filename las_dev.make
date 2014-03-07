@@ -58,3 +58,5 @@ projects[psr_0_test][download][type] = ""
 projects[psr_0_test][download][url] = ""
 projects[psr_0_test][type] = "module"
 
+;a module that makes the cas uer field available to feeds 
+projects[feeds_user_cas_field][download][url] = "git@github.com:EricScottSembrat/feeds_user_cas_field.git"
