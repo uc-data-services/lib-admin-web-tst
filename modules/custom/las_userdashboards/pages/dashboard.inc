@@ -235,7 +235,21 @@ $display->panels = array();
   $pane->type = 'views_panes';
   $pane->subtype = 'las_dashboard_views-panel_pane_1';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 6,
+            1 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
@@ -248,6 +262,73 @@ $display->panels = array();
   $pane->uuid = 'd01a6f6d-6486-4c2c-9698-680023c886f0';
   $display->content['new-d01a6f6d-6486-4c2c-9698-680023c886f0'] = $pane;
   $display->panels['right'][0] = 'new-d01a6f6d-6486-4c2c-9698-680023c886f0';
+  $pane = new stdClass();
+  $pane->pid = 'new-594b51b0-be2a-42c7-8d5b-30e5f23d7511';
+  $pane->panel = 'right';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'las_dashboard_views-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 6,
+            1 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '594b51b0-be2a-42c7-8d5b-30e5f23d7511';
+  $display->content['new-594b51b0-be2a-42c7-8d5b-30e5f23d7511'] = $pane;
+  $display->panels['right'][1] = 'new-594b51b0-be2a-42c7-8d5b-30e5f23d7511';
+  $pane = new stdClass();
+  $pane->pid = 'new-1843217b-88bc-4c6c-98e4-5b71d0439981';
+  $pane->panel = 'right';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'las_dashboard_views-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 4,
+            1 => 5,
+            2 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '1843217b-88bc-4c6c-98e4-5b71d0439981';
+  $display->content['new-1843217b-88bc-4c6c-98e4-5b71d0439981'] = $pane;
+  $display->panels['right'][2] = 'new-1843217b-88bc-4c6c-98e4-5b71d0439981';
 $display->hide_title = PANELS_TITLE_FIXED;
 $display->title_pane = '0';
 $handler->conf['display'] = $display;
