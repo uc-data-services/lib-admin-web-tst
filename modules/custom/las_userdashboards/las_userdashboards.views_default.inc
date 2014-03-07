@@ -86,8 +86,11 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
-    'name' => 'name',
     'field_unit' => 'field_unit',
+    'field_student_job_classification' => 'field_student_job_classification',
+    'field_student_job_workstudy' => 'field_student_job_workstudy',
+    'field_las_unit_chartstring' => 'field_las_unit_chartstring',
+    'name' => 'name',
     'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
     'ops' => 'ops',
     'edit_node' => 'edit_node',
@@ -106,14 +109,35 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'name' => array(
+    'field_unit' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_unit' => array(
+    'field_student_job_classification' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_student_job_workstudy' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_unit_chartstring' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -320,12 +344,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Author';
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -333,6 +351,27 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_unit']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Classification */
+  $handler->display->display_options['fields']['field_student_job_classification']['id'] = 'field_student_job_classification';
+  $handler->display->display_options['fields']['field_student_job_classification']['table'] = 'field_data_field_student_job_classification';
+  $handler->display->display_options['fields']['field_student_job_classification']['field'] = 'field_student_job_classification';
+  /* Field: Content: Work Study */
+  $handler->display->display_options['fields']['field_student_job_workstudy']['id'] = 'field_student_job_workstudy';
+  $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
+  $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
+  /* Field: Content: Chartstring */
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['field'] = 'field_las_unit_chartstring';
+  $handler->display->display_options['fields']['field_las_unit_chartstring']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Author';
   /* Field: Content: Job Request Status */
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
@@ -412,8 +451,11 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
-    'name' => 'name',
     'field_unit' => 'field_unit',
+    'field_student_job_classification' => 'field_student_job_classification',
+    'field_student_job_workstudy' => 'field_student_job_workstudy',
+    'field_las_unit_chartstring' => 'field_las_unit_chartstring',
+    'name' => 'name',
     'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
     'ops' => 'ops',
     'edit_node' => 'edit_node',
@@ -432,14 +474,35 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'name' => array(
+    'field_unit' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_unit' => array(
+    'field_student_job_classification' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_student_job_workstudy' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_unit_chartstring' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -645,12 +708,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Author';
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -658,6 +715,14 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_unit']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Classification */
+  $handler->display->display_options['fields']['field_student_job_classification']['id'] = 'field_student_job_classification';
+  $handler->display->display_options['fields']['field_student_job_classification']['table'] = 'field_data_field_student_job_classification';
+  $handler->display->display_options['fields']['field_student_job_classification']['field'] = 'field_student_job_classification';
+  /* Field: Content: Work Study */
+  $handler->display->display_options['fields']['field_student_job_workstudy']['id'] = 'field_student_job_workstudy';
+  $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
+  $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -665,6 +730,12 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_unit_chartstring']['settings'] = array(
     'link' => 0,
   );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Author';
   /* Field: Content: Job Request Status */
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['table'] = 'field_data_field_lhrd_student_job_workflow';
@@ -1128,8 +1199,8 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'field_unit' => 'field_unit',
-    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'type' => 'type',
+    'changed' => 'changed',
     'edit_node' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -1141,14 +1212,14 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_unit' => array(
+    'type' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_lhrd_student_job_workflow' => array(
+    'changed' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1211,8 +1282,9 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'field_unit' => 'field_unit',
-    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'type' => 'type',
+    'name' => 'name',
+    'changed' => 'changed',
     'edit_node' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -1224,14 +1296,21 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_unit' => array(
+    'type' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_lhrd_student_job_workflow' => array(
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1310,14 +1389,16 @@ function las_userdashboards_views_default_views() {
     t('flag'),
     t('- Choose an operation -'),
     t('Title'),
-    t('Author'),
     t('Department'),
+    t('Classification'),
+    t('Work Study'),
+    t('Chartstring'),
+    t('Author'),
     t('Job Status'),
     t('Update Status'),
     t('Edit'),
     t('Search Terms'),
     t('ManageJobsVBO'),
-    t('Chartstring'),
     t('Job Request Status'),
     t('LBSAnalystVBO'),
     t('Chartstring Check'),
