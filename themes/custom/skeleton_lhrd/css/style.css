@@ -1602,6 +1602,9 @@ ul.links.inline li {
   text-align: center
 }
 
+.node-type-job-student .tabs {
+  text-align: right
+}
 
 .view .item-list ul li {
   margin: 0;
