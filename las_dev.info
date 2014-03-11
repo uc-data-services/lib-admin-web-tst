@@ -12,7 +12,7 @@ dependencies[] = admin_theme
 ; CCK
 dependencies[] = location_cck
 ;Central Authentication Service
-dependencies[] = ucb_cas
+;dependencies[] = ucb_cas
 ; Chaos tool suite
 dependencies[] = ctools
 dependencies[] = ctools_custom_content
