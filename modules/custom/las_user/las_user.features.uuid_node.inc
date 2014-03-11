@@ -26,7 +26,7 @@ function las_user_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '9b2b7deb-1c9c-42ce-ba1e-6196fa53cd62',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',

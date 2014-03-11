@@ -91,5 +91,12 @@ function las_user_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_las_user_feeds_import'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_las_user_feeds_import_pattern';
+  $strongarm->value = '[node:content-type]';
+  $export['pathauto_node_las_user_feeds_import_pattern'] = $strongarm;
+
   return $export;
 }
