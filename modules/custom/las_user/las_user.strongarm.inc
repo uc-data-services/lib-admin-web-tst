@@ -14,7 +14,11 @@ function las_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme_path';
-  $strongarm->value = 'import/*';
+  $strongarm->value = 'import/*
+user-feeds-import
+node/*/import
+node/*/delete-items
+node/*/log';
   $export['admin_theme_path'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -95,7 +99,7 @@ function las_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_las_user_feeds_import_pattern';
-  $strongarm->value = '[node:content-type]';
+  $strongarm->value = '[node:content-type]/[node:title]';
   $export['pathauto_node_las_user_feeds_import_pattern'] = $strongarm;
 
   return $export;
