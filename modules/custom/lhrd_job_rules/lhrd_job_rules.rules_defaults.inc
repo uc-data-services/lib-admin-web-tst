@@ -205,6 +205,114 @@ function lhrd_job_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_studentjob_updateflags'] = entity_import('rules_config', '{ "rules_studentjob_updateflags" : {
+      "LABEL" : "StudentJob UpdateFlags",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
+      "ON" : { "node_presave--job_student" : { "bundle" : "job_student" } },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "node:field-lhrd-student-job-workflow" ], "value" : "Draft" } },
+              "DO" : [
+                { "flag_unflagnode" : {
+                    "flag" : "unpublish_student_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                },
+                { "flag_unflagnode" : {
+                    "flag" : "publish_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : {
+                  "data" : [ "node:field-lhrd-student-job-workflow" ],
+                  "value" : "Request"
+                }
+              },
+              "DO" : [
+                { "flag_flagnode" : {
+                    "flag" : "unpublish_student_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                },
+                { "flag_unflagnode" : {
+                    "flag" : "publish_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : {
+                  "data" : [ "node:field-lhrd-student-job-workflow" ],
+                  "value" : "Published"
+                }
+              },
+              "DO" : [
+                { "flag_flagnode" : {
+                    "flag" : "unpublish_student_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                },
+                { "flag_flagnode" : {
+                    "flag" : "publish_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : {
+                  "data" : [ "node:field-lhrd-student-job-workflow" ],
+                  "value" : "Unpublished"
+                }
+              },
+              "DO" : [
+                { "flag_unflagnode" : {
+                    "flag" : "unpublish_student_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                },
+                { "flag_unflagnode" : {
+                    "flag" : "publish_job",
+                    "node" : [ "node" ],
+                    "flagging_user" : [ "site:current-user" ],
+                    "permission_check" : 0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_unpublish_or_request_student_job'] = entity_import('rules_config', '{ "rules_unpublish_or_request_student_job" : {
       "LABEL" : "unpublish student job",
       "PLUGIN" : "reaction rule",
