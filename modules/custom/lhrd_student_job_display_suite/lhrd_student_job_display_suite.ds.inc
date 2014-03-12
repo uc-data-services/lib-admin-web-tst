@@ -17,11 +17,6 @@ function lhrd_student_job_display_suite_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'job_student';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'lhrd_returntostudentjobpage' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'lhrd_jobpage_rightcol' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -32,6 +27,11 @@ function lhrd_student_job_display_suite_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:3:{s:7:"context";a:1:{i:0;s:25:"argument_entity_id:node_1";}s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:11:"panels_mini";s:7:"subtype";s:31:"lhrd_howtoapply_student_jobpage";}',
         'load_terms' => 0,
       ),
+    ),
+    'lhrd_returntostudentjobpage' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'title' => array(
       'weight' => '2',
@@ -197,13 +197,13 @@ function lhrd_student_job_display_suite_ds_layout_settings_info() {
         2 => 'flag_publish_job',
         3 => 'lhrd_jobpage_rightcol',
         4 => 'title',
-        5 => 'field_las_supervisor',
-        6 => 'field_unit',
+        5 => 'field_unit',
+        6 => 'field_las_supervisor',
         7 => 'field_student_job_classification',
         8 => 'field_student_job_workstudy',
         9 => 'group_jobhours',
-        10 => 'group_jobinfo',
-        11 => 'field_student_job_hours',
+        10 => 'field_student_job_hours',
+        11 => 'group_jobinfo',
         12 => 'field_student_job_minshifthours',
         13 => 'field_student_job_minweeklyhours',
         14 => 'field_student_job_maxweeklyhours',
@@ -219,13 +219,13 @@ function lhrd_student_job_display_suite_ds_layout_settings_info() {
       'flag_publish_job' => 'ds_content',
       'lhrd_jobpage_rightcol' => 'ds_content',
       'title' => 'ds_content',
-      'field_las_supervisor' => 'ds_content',
       'field_unit' => 'ds_content',
+      'field_las_supervisor' => 'ds_content',
       'field_student_job_classification' => 'ds_content',
       'field_student_job_workstudy' => 'ds_content',
       'group_jobhours' => 'ds_content',
-      'group_jobinfo' => 'ds_content',
       'field_student_job_hours' => 'ds_content',
+      'group_jobinfo' => 'ds_content',
       'field_student_job_minshifthours' => 'ds_content',
       'field_student_job_minweeklyhours' => 'ds_content',
       'field_student_job_maxweeklyhours' => 'ds_content',

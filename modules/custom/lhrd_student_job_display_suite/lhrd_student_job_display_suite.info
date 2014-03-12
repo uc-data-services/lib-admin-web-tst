@@ -1,7 +1,7 @@
 name = LHRD Student Job Display Suite
 core = 7.x
 package = Features
-version = 7.x-1.0-beta11
+version = 7.x-1.0-beta12
 project = lhrd_student_job_display_suite
 dependencies[] = ctools
 dependencies[] = ds

@@ -28,12 +28,19 @@ function lhrd_student_job_display_suite_field_group_info() {
       2 => 'field_student_job_minshifthours',
       3 => 'field_student_job_minweeklyhours',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
         'classes' => 'group-jobhours field-group-fieldset',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
       ),
     ),
   );
@@ -57,12 +64,16 @@ function lhrd_student_job_display_suite_field_group_info() {
       2 => 'field_student_job_q_desired',
       3 => 'field_student_job_q_required',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
         'classes' => 'group-jobinfo field-group-fieldset',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
     ),
   );
@@ -84,12 +95,16 @@ function lhrd_student_job_display_suite_field_group_info() {
       0 => 'flag_publish_job',
       1 => 'lhrd_jobpage_rightcol',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'label' => 'right-col-group',
       'instance_settings' => array(
         'classes' => 'group-jobpage-rightcol field-group-fieldset',
         'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
       'formatter' => 'open',
     ),
