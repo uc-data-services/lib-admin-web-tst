@@ -42,26 +42,26 @@ function lhrd_job_rules_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'lhrd_job_rules',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
-  // Exported flag: "Published".
+  // Exported flag: "Analyst StudentJob Publish/Unpublish".
   $flags['publish_job'] = array(
     'entity_type' => 'node',
-    'title' => 'Published',
+    'title' => 'Analyst StudentJob Publish/Unpublish',
     'global' => 1,
     'types' => array(
       0 => 'job_student',
     ),
     'flag_short' => 'Publish',
-    'flag_long' => 'Publish this job.',
-    'flag_message' => 'The job has been published. ',
+    'flag_long' => 'Publish this student job.',
+    'flag_message' => 'This student job has been published. ',
     'unflag_short' => 'Unpublish',
-    'unflag_long' => 'Unpublish this job. ',
-    'unflag_message' => 'The job has been unpublished. ',
+    'unflag_long' => 'Unpublish this student job. ',
+    'unflag_message' => 'This student job has been unpublished. ',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => 0,
@@ -87,20 +87,20 @@ function lhrd_job_rules_flag_default_flags() {
     ),
     'api_version' => 3,
   );
-  // Exported flag: "student job republish request unpublish toggle".
+  // Exported flag: "Supervisor StudentJob Request/Unpost".
   $flags['unpublish_student_job'] = array(
     'entity_type' => 'node',
-    'title' => 'student job republish request unpublish toggle',
+    'title' => 'Supervisor StudentJob Request/Unpost',
     'global' => 1,
     'types' => array(
       0 => 'job_student',
     ),
-    'flag_short' => 'Unpost',
-    'flag_long' => 'Unpost this job',
-    'flag_message' => 'The job was unpublished.',
-    'unflag_short' => ' Request Job Posting',
-    'unflag_long' => 'Request Student Job to be Re-posted',
-    'unflag_message' => 'Your request for this job to be re-posted has been sent to an HR Analyst.',
+    'flag_short' => 'Request Job Posting',
+    'flag_long' => 'Request this Student Job to be Posted',
+    'flag_message' => 'Your request for this job to be posted has been sent to an HR Analyst.',
+    'unflag_short' => 'Unpost',
+    'unflag_long' => 'Unpost this Student Job',
+    'unflag_message' => 'This student job has been unposted.',
     'unflag_denied_text' => 'You cannot use this flag.',
     'link_type' => 'toggle',
     'weight' => 0,

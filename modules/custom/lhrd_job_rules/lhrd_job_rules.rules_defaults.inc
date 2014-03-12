@@ -88,7 +88,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job", "student" ],
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "node_presave--job_student" : { "bundle" : "job_student" } },
       "IF" : [
         { "node_is_of_type" : {
@@ -109,7 +109,21 @@ function lhrd_job_rules_default_rules_configuration() {
       ],
       "DO" : [
         { "node_publish" : { "node" : [ "node" ] } },
-        { "drupal_message" : { "message" : "[node:title] has been published. " } }
+        { "drupal_message" : { "message" : "[node:title] has been published. " } },
+        { "flag_flagnode" : {
+            "flag" : "publish_job",
+            "node" : [ "node" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 0
+          }
+        },
+        { "flag_flagnode" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "node" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 0
+          }
+        }
       ]
     }
   }');
@@ -119,7 +133,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "OWNER" : "rules",
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
-      "ON" : { "flag_unflagged_unpublish_student_job" : [] },
+      "ON" : { "flag_flagged_unpublish_student_job" : [] },
       "IF" : [
         { "entity_has_field" : {
             "entity" : [ "flagged-node" ],
@@ -197,7 +211,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "OWNER" : "rules",
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
-      "ON" : { "flag_flagged_unpublish_student_job" : [] },
+      "ON" : { "flag_unflagged_unpublish_student_job" : [] },
       "IF" : [
         { "entity_has_field" : {
             "entity" : [ "flagged-node" ],
