@@ -15,7 +15,7 @@ function las_chartstrings_field_default_field_instances() {
     'bundle' => 'las_chartstring',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a short descriptive name to use as a search keyword. e.g. Doe/Moffitt GA',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -271,6 +271,7 @@ function las_chartstrings_field_default_field_instances() {
   t('Chartfield 1');
   t('Chartfield 2');
   t('Department');
+  t('Enter a short descriptive name to use as a search keyword. e.g. Doe/Moffitt GA');
   t('Fund');
   t('Program code');
   t('The department for this chartstring. ');

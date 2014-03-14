@@ -10,6 +10,18 @@
 function las_permissions_roles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access admin theme'.
+  $permissions['access admin theme'] = array(
+    'name' => 'access admin theme',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'admin_theme',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -416,6 +428,17 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'flag las_lbschartstringcheck'.
+  $permissions['flag las_lbschartstringcheck'] = array(
+    'name' => 'flag las_lbschartstringcheck',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'flag publish_job'.
   $permissions['flag publish_job'] = array(
     'name' => 'flag publish_job',
@@ -458,6 +481,17 @@ function las_permissions_roles_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
+  );
+
+  // Exported permission: 'unflag las_lbschartstringcheck'.
+  $permissions['unflag las_lbschartstringcheck'] = array(
+    'name' => 'unflag las_lbschartstringcheck',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'flag',
   );
 
   // Exported permission: 'unflag publish_job'.
@@ -511,6 +545,15 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view revisions'.
+  $permissions['view revisions'] = array(
+    'name' => 'view revisions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'view the administration theme'.
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
@@ -521,15 +564,6 @@ function las_permissions_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
-  );
-
-  // Exported permission: 'view revisions'.
-  $permissions['view revisions'] = array(
-    'name' => 'view revisions',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   return $permissions;

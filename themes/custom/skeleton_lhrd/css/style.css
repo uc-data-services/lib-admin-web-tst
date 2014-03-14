@@ -1428,9 +1428,11 @@ ul.links.inline li {
   border-left: 1px dotted #444;
   border-radius: 0;
   float: right;
-  margin: 0 -20px 10px 10px;
+  margin: 0 -10px 10px 10px;
+  padding-left: 10px;
   width: 250px
 }
+.group-jobpage-rightcol h3,
 .group-jobpage-rightcol legend {
   display: none
 }
@@ -1440,12 +1442,15 @@ ul.links.inline li {
   padding-left: 0
 }
 
-.field-name-lhrd-jobdescription-ds p,
-.field-name-lhrd-workschedule-ds p {
+.group-jobhours a,
+.group-jobinfo a {
   color: #a1a2a5;
   font-size: 23px;
-  font-weight: bold;
-  margin: 20px 0 0 0
+  font-weight: bold
+}
+.group-jobhours h3,
+.group-jobinfo h3 {
+  margin-top: 20px
 }
 
 .field-name-lhrd-studjobnid-ds {

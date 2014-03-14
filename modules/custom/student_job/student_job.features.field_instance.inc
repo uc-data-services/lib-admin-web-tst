@@ -32,7 +32,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -53,7 +53,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -76,7 +76,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -107,7 +107,7 @@ function student_job_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form_single',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -126,8 +126,11 @@ function student_job_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -151,7 +154,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -172,7 +175,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -195,7 +198,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -217,7 +220,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -238,7 +241,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -259,7 +262,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -305,7 +308,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -326,7 +329,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -350,7 +353,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -373,7 +376,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -395,7 +398,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -462,7 +465,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 1,
     ),
   );
 
@@ -471,7 +474,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The duties of this job.',
+    'description' => 'What tasks will students be required to complete?',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -485,7 +488,7 @@ function student_job_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -496,7 +499,7 @@ function student_job_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_student_job_duties',
-    'label' => 'Duties',
+    'label' => 'Job Duties',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -518,8 +521,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The days and hours that this job will have shifts.
-NEEDS FIXING!',
+    'description' => 'If this job requires any specific work hours, enter them here.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -533,7 +535,7 @@ NEEDS FIXING!',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -566,7 +568,7 @@ NEEDS FIXING!',
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The maximum number of weekly hours that this job can allow.',
+    'description' => 'The maximum number of hours per week this job requires.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -590,7 +592,7 @@ NEEDS FIXING!',
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 13,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -648,7 +650,7 @@ NEEDS FIXING!',
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -706,7 +708,7 @@ NEEDS FIXING!',
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 12,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -740,7 +742,7 @@ NEEDS FIXING!',
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Got any special notes to add about this job?',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -754,7 +756,7 @@ NEEDS FIXING!',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -787,7 +789,7 @@ NEEDS FIXING!',
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'How many students will be hired for this job.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -805,7 +807,7 @@ NEEDS FIXING!',
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -816,7 +818,7 @@ NEEDS FIXING!',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_student_job_numtohire',
-    'label' => 'Number of Students to Hire',
+    'label' => 'How many students will be hired for this job?',
     'required' => 1,
     'settings' => array(
       'max' => '',
@@ -839,7 +841,7 @@ NEEDS FIXING!',
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The desired qualifications for this job.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -853,7 +855,7 @@ NEEDS FIXING!',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -886,7 +888,7 @@ NEEDS FIXING!',
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The required qualifications of this job.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -900,7 +902,7 @@ NEEDS FIXING!',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1024,7 +1026,7 @@ NEEDS FIXING!',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1038,28 +1040,24 @@ NEEDS FIXING!',
   t('Department');
   t('Desired Qualifications');
   t('Does this job require work study?');
-  t('Duties');
-  t('Got any special notes to add about this job?');
-  t('How many students will be hired for this job.');
+  t('How many students will be hired for this job?');
+  t('If this job requires any specific work hours, enter them here.');
+  t('Job Duties');
   t('Job Request Status');
   t('Kronos Supervisor');
   t('Maximum Hours/Week');
   t('Minimum Hours/Shift');
   t('Minimum Hours/Week');
-  t('Number of Students to Hire');
   t('Required Qualifications');
   t('Special Notes');
   t('Specific Work Hours');
   t('Student supervisor');
   t('The classification for this job.');
-  t('The days and hours that this job will have shifts.
-NEEDS FIXING!');
   t('The desired qualifications for this job.');
-  t('The duties of this job.');
-  t('The maximum number of weekly hours that this job can allow.');
+  t('The maximum number of hours per week this job requires.');
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
-  t('The required qualifications of this job.');
+  t('What tasks will students be required to complete?');
   t('Work Study');
 
   return $field_instances;
