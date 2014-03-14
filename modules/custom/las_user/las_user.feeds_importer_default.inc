@@ -61,6 +61,31 @@ function las_user_feeds_importer_default() {
             'target' => 'cas_name',
             'unique' => FALSE,
           ),
+          4 => array(
+            'source' => 'telephonenumber',
+            'target' => 'field_las_telephone',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'berkeleyeduaffiliations',
+            'target' => 'field_las_affiliations',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'roomnumber',
+            'target' => 'field_las_address:premise',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'street',
+            'target' => 'field_las_address:thoroughfare',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'l',
+            'target' => 'field_las_address:administrative_area',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',

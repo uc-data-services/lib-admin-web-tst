@@ -18,7 +18,8 @@ function las_user_strongarm() {
 user-feeds-import
 node/*/import
 node/*/delete-items
-node/*/log';
+node/*/log
+user/*/edit';
   $export['admin_theme_path'] = $strongarm;
 
   $strongarm = new stdClass();
