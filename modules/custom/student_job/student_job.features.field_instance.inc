@@ -32,7 +32,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -53,7 +53,53 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-job_student-field_las_jobtitle'
+  $field_instances['node-job_student-field_las_jobtitle'] = array(
+    'bundle' => 'job_student',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a descriptive name for this job. e.g. Front Desk Clerk',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_las_jobtitle',
+    'label' => 'Student Job Title',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -76,7 +122,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -107,7 +153,7 @@ function student_job_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form_single',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -154,7 +200,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -175,7 +221,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -198,7 +244,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -217,10 +263,11 @@ function student_job_field_default_field_instances() {
         'weight' => 17,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
+        'type' => 'list_default',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -241,7 +288,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -262,7 +309,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -286,7 +333,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 21,
     ),
   );
 
@@ -308,7 +355,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -320,7 +367,7 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_lhrd_krns_is_stdn_super',
     'label' => 'Are you the Kronos Supervisor?',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -329,7 +376,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -353,7 +400,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -376,7 +423,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -398,7 +445,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -419,7 +466,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -465,7 +512,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -512,7 +559,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -780,7 +827,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -807,7 +854,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -832,7 +879,7 @@ function student_job_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -879,7 +926,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -926,7 +973,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -950,10 +997,9 @@ function student_job_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -976,7 +1022,7 @@ function student_job_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 20,
     ),
   );
 
@@ -1026,7 +1072,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1040,6 +1086,7 @@ function student_job_field_default_field_instances() {
   t('Department');
   t('Desired Qualifications');
   t('Does this job require work study?');
+  t('Enter a descriptive name for this job. e.g. Front Desk Clerk');
   t('How many students will be hired for this job?');
   t('If this job requires any specific work hours, enter them here.');
   t('Job Duties');
@@ -1051,6 +1098,7 @@ function student_job_field_default_field_instances() {
   t('Required Qualifications');
   t('Special Notes');
   t('Specific Work Hours');
+  t('Student Job Title');
   t('Student supervisor');
   t('The classification for this job.');
   t('The desired qualifications for this job.');

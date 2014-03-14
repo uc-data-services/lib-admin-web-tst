@@ -176,7 +176,11 @@ function las_chartstrings_field_default_field_instances() {
   // Exported field_instance: 'node-las_chartstring-field_las_program_code'
   $field_instances['node-las_chartstring-field_las_program_code'] = array(
     'bundle' => 'las_chartstring',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 60,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

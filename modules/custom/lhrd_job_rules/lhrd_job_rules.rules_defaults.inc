@@ -88,7 +88,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job", "student" ],
-      "REQUIRES" : [ "rules", "flag" ],
+      "REQUIRES" : [ "rules" ],
       "ON" : { "node_presave--job_student" : { "bundle" : "job_student" } },
       "IF" : [
         { "node_is_of_type" : {
@@ -109,21 +109,7 @@ function lhrd_job_rules_default_rules_configuration() {
       ],
       "DO" : [
         { "node_publish" : { "node" : [ "node" ] } },
-        { "drupal_message" : { "message" : "[node:title] has been published. " } },
-        { "flag_flagnode" : {
-            "flag" : "publish_job",
-            "node" : [ "node" ],
-            "flagging_user" : [ "site:current-user" ],
-            "permission_check" : 0
-          }
-        },
-        { "flag_flagnode" : {
-            "flag" : "unpublish_student_job",
-            "node" : [ "node" ],
-            "flagging_user" : [ "site:current-user" ],
-            "permission_check" : 0
-          }
-        }
+        { "drupal_message" : { "message" : "[node:title] has been published. " } }
       ]
     }
   }');
@@ -201,7 +187,8 @@ function lhrd_job_rules_default_rules_configuration() {
             "from" : "[site:mail]",
             "language" : [ "" ]
           }
-        }
+        },
+        { "drupal_message" : { "message" : "Your student job has been requested for posting." } }
       ]
     }
   }');
@@ -227,14 +214,14 @@ function lhrd_job_rules_default_rules_configuration() {
                     "flag" : "unpublish_student_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 },
                 { "flag_unflagnode" : {
                     "flag" : "publish_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 }
               ]
@@ -250,14 +237,14 @@ function lhrd_job_rules_default_rules_configuration() {
                     "flag" : "unpublish_student_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 },
                 { "flag_unflagnode" : {
                     "flag" : "publish_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 }
               ]
@@ -273,14 +260,14 @@ function lhrd_job_rules_default_rules_configuration() {
                     "flag" : "unpublish_student_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 },
                 { "flag_flagnode" : {
                     "flag" : "publish_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 }
               ]
@@ -296,14 +283,14 @@ function lhrd_job_rules_default_rules_configuration() {
                     "flag" : "unpublish_student_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 },
                 { "flag_unflagnode" : {
                     "flag" : "publish_job",
                     "node" : [ "node" ],
                     "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 0
+                    "permission_check" : 1
                   }
                 }
               ]

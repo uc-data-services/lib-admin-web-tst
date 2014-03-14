@@ -14,14 +14,14 @@ function student_job_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_node_job_student';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['auto_entitylabel_node_job_student'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_job_student';
-  $strongarm->value = '[node:nid] - [node:title]';
+  $strongarm->value = '[node:nid] - [node:field_las_jobtitle]';
   $export['auto_entitylabel_pattern_node_job_student'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -120,13 +120,13 @@ function student_job_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
         'workflow' => array(
           'weight' => '17',
         ),
         'flag' => array(
-          'weight' => '1',
+          'weight' => '19',
         ),
       ),
       'display' => array(
