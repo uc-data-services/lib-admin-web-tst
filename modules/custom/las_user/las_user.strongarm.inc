@@ -32,6 +32,54 @@ user/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'cas_attributes_ldap_server';
+  $strongarm->value = 'ucb_test';
+  $export['cas_attributes_ldap_server'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cas_attributes_overwrite';
+  $strongarm->value = '1';
+  $export['cas_attributes_overwrite'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cas_attributes_roles_mapping';
+  $strongarm->value = '';
+  $export['cas_attributes_roles_mapping'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cas_attributes_sync_every_login';
+  $strongarm->value = '1';
+  $export['cas_attributes_sync_every_login'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cas_auto_assigned_role';
+  $strongarm->value = array(
+    2 => TRUE,
+    6 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $export['cas_auto_assigned_role'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cas_library_dir';
+  $strongarm->value = 'CAS';
+  $export['cas_library_dir'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__las_user_feeds_import';
   $strongarm->value = array(
     'view_modes' => array(),
