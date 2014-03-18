@@ -158,7 +158,7 @@ function lhrd_job_rules_default_rules_configuration() {
         },
         { "user_has_role" : {
             "account" : [ "site:current-user" ],
-            "roles" : { "value" : { "5" : "5" } }
+            "roles" : { "value" : { "6" : "6" } }
           }
         },
         { "data_is" : {
