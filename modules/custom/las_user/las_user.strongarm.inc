@@ -15,7 +15,7 @@ function las_user_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme_path';
   $strongarm->value = 'import/*
-user-feeds-import
+user-feeds-import*
 node/*/import
 node/*/delete-items
 node/*/log
