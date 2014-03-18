@@ -18,7 +18,7 @@ function las_user_default_ldap_query() {
   $qid->sid = 'ucb_test';
   $qid->status = TRUE;
   $qid->base_dn_str = 'ou=people,dc=berkeley,dc=edu';
-  $qid->filter = '(|(uid=307060)(uid=182628)(uid=175786)(uid=719913)(uid=883528) (uid=113782)(uid=54859))';
+  $qid->filter = '(|(uid=307060)(uid=182628)(uid=175786)(uid=719913)(uid=883528) (uid=113782)(uid=54859)(uid=1018687))';
   $qid->attributes_str = '';
   $qid->sizelimit = 0;
   $qid->timelimit = 0;
