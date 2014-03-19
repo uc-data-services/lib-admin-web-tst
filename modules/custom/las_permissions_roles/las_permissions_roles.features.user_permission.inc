@@ -55,6 +55,18 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'contact',
   );
 
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: 'create job_academic content'.
   $permissions['create job_academic content'] = array(
     'name' => 'create job_academic content',
