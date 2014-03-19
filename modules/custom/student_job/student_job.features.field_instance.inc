@@ -457,7 +457,7 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_lhrd_student_job_workflow',
     'label' => 'Job Request Status',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -549,7 +549,7 @@ function student_job_field_default_field_instances() {
     'label' => 'Job Duties',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -596,7 +596,7 @@ function student_job_field_default_field_instances() {
     'label' => 'Specific Work Hours',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -817,7 +817,7 @@ function student_job_field_default_field_instances() {
     'label' => 'Special Notes',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -916,7 +916,7 @@ function student_job_field_default_field_instances() {
     'label' => 'Desired Qualifications',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -963,7 +963,7 @@ function student_job_field_default_field_instances() {
     'label' => 'Required Qualifications',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
