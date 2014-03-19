@@ -41,20 +41,9 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job post" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_flagged_publish_job" : [] },
-      "IF" : [
-        { "entity_has_field" : {
-            "entity" : [ "flagged-node" ],
-            "field" : "field_lhrd_student_job_workflow"
-          }
-        }
-      ],
       "DO" : [
         { "node_publish" : { "node" : [ "flagged-node" ] } },
-        { "data_set" : {
-            "data" : [ "flagged-node:field-lhrd-student-job-workflow" ],
-            "value" : "Published"
-          }
-        }
+        { "drupal_message" : { "message" : "[flagged-node:title] has been published." } }
       ]
     }
   }');
@@ -65,51 +54,9 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "unpost" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_unflagged_publish_job" : [] },
-      "IF" : [
-        { "entity_has_field" : {
-            "entity" : [ "flagged-node" ],
-            "field" : "field_lhrd_student_job_workflow"
-          }
-        }
-      ],
       "DO" : [
         { "node_unpublish" : { "node" : [ "flagged-node" ] } },
-        { "data_set" : {
-            "data" : [ "flagged-node:field-lhrd-student-job-workflow" ],
-            "value" : "Unpublished"
-          }
-        },
         { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } }
-      ]
-    }
-  }');
-  $items['rules_lhrd_post_student_job'] = entity_import('rules_config', '{ "rules_lhrd_post_student_job" : {
-      "LABEL" : "Post Student Position",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "job", "student" ],
-      "REQUIRES" : [ "rules" ],
-      "ON" : { "node_presave--job_student" : { "bundle" : "job_student" } },
-      "IF" : [
-        { "node_is_of_type" : {
-            "node" : [ "node" ],
-            "type" : { "value" : { "job_student" : "job_student" } }
-          }
-        },
-        { "user_has_role" : {
-            "account" : [ "site:current-user" ],
-            "roles" : { "value" : { "4" : "4" } }
-          }
-        },
-        { "data_is" : {
-            "data" : [ "node:field-lhrd-student-job-workflow" ],
-            "value" : "Post Job"
-          }
-        }
-      ],
-      "DO" : [
-        { "node_publish" : { "node" : [ "node" ] } },
-        { "drupal_message" : { "message" : "[node:title] has been published. " } }
       ]
     }
   }');
@@ -120,64 +67,12 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_flagged_unpublish_student_job" : [] },
-      "IF" : [
-        { "entity_has_field" : {
-            "entity" : [ "flagged-node" ],
-            "field" : "field_lhrd_student_job_workflow"
-          }
-        }
-      ],
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "6" : "6" } },
             "subject" : "solo ventures",
             "message" : "more to come.",
             "from" : "from you"
-          }
-        },
-        { "data_set" : {
-            "data" : [ "flagged-node:field-lhrd-student-job-workflow" ],
-            "value" : "Request"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_request_student_job'] = entity_import('rules_config', '{ "rules_request_student_job" : {
-      "LABEL" : "Request Student Job",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "job", "student" ],
-      "REQUIRES" : [ "rules" ],
-      "ON" : { "node_insert--job_student" : { "bundle" : "job_student" } },
-      "IF" : [
-        { "node_is_of_type" : {
-            "node" : [ "node" ],
-            "type" : { "value" : { "job_student" : "job_student" } }
-          }
-        },
-        { "user_has_role" : {
-            "account" : [ "site:current-user" ],
-            "roles" : { "value" : { "6" : "6" } }
-          }
-        },
-        { "data_is" : {
-            "data" : [ "node:field-lhrd-student-job-workflow" ],
-            "value" : "Request"
-          }
-        }
-      ],
-      "DO" : [
-        { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "6" : "6" } },
-            "subject" : "Ready for your review: Student Job Request Job# [node:nid] [node:title]\\r\\n",
-            "message" : "[node:field_lhrd_stud_supervisor] has submitted job request for your review:\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid]  \\r\\nJob Title: [node:title]\\r\\nDepartment: [node:field_unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\n",
-            "from" : "[node:author]"
-          }
-        },
-        { "entity_fetch" : {
-            "USING" : { "type" : "user", "id" : [ "node:author:uid" ] },
-            "PROVIDE" : { "entity_fetched" : { "entity_fetched_author_uid" : "Fetched author:uid" } }
           }
         },
         { "mail" : {
@@ -192,114 +87,6 @@ function lhrd_job_rules_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_studentjob_updateflags'] = entity_import('rules_config', '{ "rules_studentjob_updateflags" : {
-      "LABEL" : "StudentJob UpdateFlags",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
-      "ON" : { "node_presave--job_student" : { "bundle" : "job_student" } },
-      "IF" : [
-        { "node_is_of_type" : {
-            "node" : [ "node" ],
-            "type" : { "value" : { "job_student" : "job_student" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "data_is" : { "data" : [ "node:field-lhrd-student-job-workflow" ], "value" : "Draft" } },
-              "DO" : [
-                { "flag_unflagnode" : {
-                    "flag" : "unpublish_student_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                },
-                { "flag_unflagnode" : {
-                    "flag" : "publish_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                }
-              ]
-            },
-            {
-              "ELSE IF" : { "data_is" : {
-                  "data" : [ "node:field-lhrd-student-job-workflow" ],
-                  "value" : "Request"
-                }
-              },
-              "DO" : [
-                { "flag_flagnode" : {
-                    "flag" : "unpublish_student_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                },
-                { "flag_unflagnode" : {
-                    "flag" : "publish_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                }
-              ]
-            },
-            {
-              "ELSE IF" : { "data_is" : {
-                  "data" : [ "node:field-lhrd-student-job-workflow" ],
-                  "value" : "Published"
-                }
-              },
-              "DO" : [
-                { "flag_flagnode" : {
-                    "flag" : "unpublish_student_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                },
-                { "flag_flagnode" : {
-                    "flag" : "publish_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                }
-              ]
-            },
-            {
-              "ELSE IF" : { "data_is" : {
-                  "data" : [ "node:field-lhrd-student-job-workflow" ],
-                  "value" : "Unpublished"
-                }
-              },
-              "DO" : [
-                { "flag_unflagnode" : {
-                    "flag" : "unpublish_student_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                },
-                { "flag_unflagnode" : {
-                    "flag" : "publish_job",
-                    "node" : [ "node" ],
-                    "flagging_user" : [ "site:current-user" ],
-                    "permission_check" : 1
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  }');
   $items['rules_unpublish_or_request_student_job'] = entity_import('rules_config', '{ "rules_unpublish_or_request_student_job" : {
       "LABEL" : "unpublish student job",
       "PLUGIN" : "reaction rule",
@@ -307,20 +94,8 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_unflagged_unpublish_student_job" : [] },
-      "IF" : [
-        { "entity_has_field" : {
-            "entity" : [ "flagged-node" ],
-            "field" : "field_lhrd_student_job_workflow"
-          }
-        }
-      ],
       "DO" : [
         { "node_unpublish" : { "node" : [ "flagged-node" ] } },
-        { "data_set" : {
-            "data" : [ "flagged-node:field-lhrd-student-job-workflow" ],
-            "value" : "Unpublished"
-          }
-        },
         { "flag_unflagnode" : {
             "flag" : "publish_job",
             "node" : [ "flagged-node" ],
