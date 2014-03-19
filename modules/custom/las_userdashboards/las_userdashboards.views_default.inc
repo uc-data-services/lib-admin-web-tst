@@ -241,6 +241,62 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: UserInfo */
+  $handler = $view->new_display('panel_pane', 'UserInfo', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: CAS user name */
+  $handler->display->display_options['fields']['cas_name']['id'] = 'cas_name';
+  $handler->display->display_options['fields']['cas_name']['table'] = 'cas_user';
+  $handler->display->display_options['fields']['cas_name']['field'] = 'cas_name';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Field: Field: Department */
+  $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['value'] = '1';
   $translatables['las_dashboard_user_views'] = array(
     t('Master'),
     t('Manage Users'),
@@ -266,6 +322,8 @@ function las_userdashboards_views_default_views() {
     t('Created date'),
     t('Edit link'),
     t('ManageUsersVBO'),
+    t('UserInfo'),
+    t('View panes'),
   );
   $export['las_dashboard_user_views'] = $view;
 
@@ -1415,6 +1473,14 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'You have no student jobs.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1670,6 +1736,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Chartstring';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: User: Name */
@@ -2090,8 +2157,13 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Chartstring';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Alias */
+  $handler->display->display_options['fields']['field_las_alias']['id'] = 'field_las_alias';
+  $handler->display->display_options['fields']['field_las_alias']['table'] = 'field_data_field_las_alias';
+  $handler->display->display_options['fields']['field_las_alias']['field'] = 'field_las_alias';
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -2181,6 +2253,7 @@ function las_userdashboards_views_default_views() {
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),
+    t('You have no student jobs.'),
     t('View panes'),
     t('YourRecentActivity'),
     t('Your Recent Activity'),
@@ -2199,6 +2272,7 @@ function las_userdashboards_views_default_views() {
     t('Recent Student Job Requests'),
     t('There are currently no student jobs that meet your criteria.'),
     t('ChartstringsVBO'),
+    t('Alias'),
   );
   $export['las_dashboard_views'] = $view;
 
