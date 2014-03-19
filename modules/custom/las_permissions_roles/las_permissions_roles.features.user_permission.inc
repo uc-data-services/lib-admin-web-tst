@@ -535,6 +535,57 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'view any unpublished job_academic content'.
+  $permissions['view any unpublished job_academic content'] = array(
+    'name' => 'view any unpublished job_academic content',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished job_staff content'.
+  $permissions['view any unpublished job_staff content'] = array(
+    'name' => 'view any unpublished job_staff content',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished job_student content'.
+  $permissions['view any unpublished job_student content'] = array(
+    'name' => 'view any unpublished job_student content',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished travel_form content'.
+  $permissions['view any unpublished travel_form content'] = array(
+    'name' => 'view any unpublished travel_form content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished travel_training_development_reim content'.
+  $permissions['view any unpublished travel_training_development_reim content'] = array(
+    'name' => 'view any unpublished travel_training_development_reim content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
