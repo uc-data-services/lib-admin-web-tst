@@ -69,16 +69,16 @@ function lhrd_job_rules_default_rules_configuration() {
       "ON" : { "flag_flagged_unpublish_student_job" : [] },
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "6" : "6" } },
+            "roles" : { "value" : { "4" : "4" } },
             "subject" : "solo ventures",
             "message" : "more to come.",
             "from" : "from you"
           }
         },
         { "mail" : {
-            "to" : "[entity-fetched-author-uid:mail]",
-            "subject" : "Student Job [node:nid] - [node:status]",
-            "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [node:url]\\t",
+            "to" : "[flagging-user:mail]",
+            "subject" : "Student Job [flagged-node:nid] - [flagged-node:status]",
+            "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [flagged-node:url]\\t",
             "from" : "[site:mail]",
             "language" : [ "" ]
           }
@@ -102,7 +102,8 @@ function lhrd_job_rules_default_rules_configuration() {
             "flagging_user" : [ "flagging_user" ],
             "permission_check" : 1
           }
-        }
+        },
+        { "drupal_message" : { "message" : "[flagged-node:title] has been unrequested." } }
       ]
     }
   }');
