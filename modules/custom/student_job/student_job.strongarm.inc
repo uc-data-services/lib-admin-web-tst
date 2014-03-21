@@ -21,7 +21,7 @@ function student_job_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_job_student';
-  $strongarm->value = 'Job # [node:nid] - [node:field_las_jobtitle]';
+  $strongarm->value = '[node:field_las_jobtitle] - Job #[node:nid]';
   $export['auto_entitylabel_pattern_node_job_student'] = $strongarm;
 
   $strongarm = new stdClass();
