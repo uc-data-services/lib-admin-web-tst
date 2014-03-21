@@ -82,9 +82,8 @@ function lhrd_job_rules_default_rules_configuration() {
       "DO" : [
         { "mail" : {
             "to" : "[node:author:mail]",
-            "subject" : "hey ho",
-            "message" : "hey ho",
-            "from" : "[site:mail]",
+            "subject" : "Student Job Request [node:nid] [node:field-las-jobtitle]",
+            "message" : "You have successfully submitted a job request to the Student Employment Coordinator. It is now pending review.\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid] \\r\\nJob Title: [node:field-las-jobtitle]\\r\\nDepartment: [node:field-unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\nChartstring: [node:field-las-unit-chartstring]",
             "language" : [ "" ]
           }
         }
