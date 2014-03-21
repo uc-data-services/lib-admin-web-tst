@@ -41,8 +41,23 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job post" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_flagged_publish_job" : [] },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "flagged-node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "4" : "4" } } } }
+      ],
       "DO" : [
         { "node_publish" : { "node" : [ "flagged-node" ] } },
+        { "mail" : {
+            "to" : "[flagged-node:author:mail]",
+            "subject" : "Approved and posted: Student Job [flagged-node:nid] [flagged-node:title]",
+            "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+            "language" : [ "" ]
+          }
+        },
         { "drupal_message" : { "message" : "[flagged-node:title] has been published." } }
       ]
     }
@@ -54,8 +69,29 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "unpost" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_unflagged_publish_job" : [] },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "flagged-node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "4" : "4" } } } }
+      ],
       "DO" : [
         { "node_unpublish" : { "node" : [ "flagged-node" ] } },
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "4" : "4", "5" : "5" } },
+            "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
+            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]"
+          }
+        },
+        { "mail" : {
+            "to" : "[flagged-node:author:mail]",
+            "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
+            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+            "language" : [ "" ]
+          }
+        },
         { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } }
       ]
     }
