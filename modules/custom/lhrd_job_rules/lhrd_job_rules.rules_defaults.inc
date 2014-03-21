@@ -60,6 +60,37 @@ function lhrd_job_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_lhrd_request_new_updated_student_job'] = entity_import('rules_config', '{ "rules_lhrd_request_new_updated_student_job" : {
+      "LABEL" : "Request Student Job",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "job post", "student" ],
+      "REQUIRES" : [ "rules", "flag" ],
+      "ON" : {
+        "node_insert--job_student" : { "bundle" : "job_student" },
+        "node_update--job_student" : { "bundle" : "job_student" },
+        "flag_unflagged_unpublish_student_job" : []
+      },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "node:author" ], "roles" : { "value" : { "6" : "6" } } } }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "[node:author:mail]",
+            "subject" : "hey ho",
+            "message" : "hey ho",
+            "from" : "[site:mail]",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_request_job_re_posting'] = entity_import('rules_config', '{ "rules_request_job_re_posting" : {
       "LABEL" : "Request job re-posting",
       "PLUGIN" : "reaction rule",
