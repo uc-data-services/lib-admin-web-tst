@@ -251,7 +251,11 @@ function student_job_field_default_field_instances() {
   // Exported field_instance: 'node-job_student-field_las_workstudy'
   $field_instances['node-job_student-field_las_workstudy'] = array(
     'bundle' => 'job_student',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Yes',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -340,7 +344,11 @@ function student_job_field_default_field_instances() {
   // Exported field_instance: 'node-job_student-field_lhrd_krns_is_stdn_super'
   $field_instances['node-job_student-field_lhrd_krns_is_stdn_super'] = array(
     'bundle' => 'job_student',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

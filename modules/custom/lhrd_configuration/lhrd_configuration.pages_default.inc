@@ -133,7 +133,10 @@ function lhrd_configuration_default_page_manager_pages() {
   $page->admin_title = 'LHRD FormsLandingPage';
   $page->admin_description = '';
   $page->path = 'forms';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -187,7 +190,10 @@ function lhrd_configuration_default_page_manager_pages() {
   $page->admin_title = 'LHRD JobSeekers';
   $page->admin_description = '';
   $page->path = 'job-seekers';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

@@ -710,19 +710,20 @@ function lhrd_configuration_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-top-bar_login:user/login
-  $menu_links['menu-top-bar_login:user/login'] = array(
+  // Exported menu link: menu-top-bar_login:cas
+  $menu_links['menu-top-bar_login:cas'] = array(
     'menu_name' => 'menu-top-bar',
-    'link_path' => 'user/login',
-    'router_path' => 'user/login',
+    'link_path' => 'cas',
+    'router_path' => 'cas',
     'link_title' => 'Login',
     'options' => array(
+      'identifier' => 'menu-top-bar_login:cas',
       'attributes' => array(
         'class' => array(
           0 => 'usermenuleft',
         ),
       ),
-      'identifier' => 'menu-top-bar_login:user/login',
+      'alter' => TRUE,
     ),
     'module' => 'menu',
     'hidden' => 0,
