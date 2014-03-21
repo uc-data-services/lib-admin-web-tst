@@ -65,11 +65,10 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job post", "student" ],
-      "REQUIRES" : [ "rules", "flag" ],
+      "REQUIRES" : [ "rules" ],
       "ON" : {
         "node_insert--job_student" : { "bundle" : "job_student" },
-        "node_update--job_student" : { "bundle" : "job_student" },
-        "flag_unflagged_unpublish_student_job" : []
+        "node_update--job_student" : { "bundle" : "job_student" }
       },
       "IF" : [
         { "node_is_of_type" : {

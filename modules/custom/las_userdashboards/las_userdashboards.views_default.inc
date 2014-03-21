@@ -341,6 +341,7 @@ function las_userdashboards_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'view own unpublished content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -1473,14 +1474,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'You have no student jobs.';
-  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1493,7 +1486,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
   $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Content: Job Request Status */
   $handler->display->display_options['fields']['field_lhrd_student_job_workflow']['id'] = 'field_lhrd_student_job_workflow';
@@ -1736,7 +1729,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Chartstring';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: User: Name */
@@ -2157,13 +2149,8 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Chartstring';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Alias */
-  $handler->display->display_options['fields']['field_las_alias']['id'] = 'field_las_alias';
-  $handler->display->display_options['fields']['field_las_alias']['table'] = 'field_data_field_las_alias';
-  $handler->display->display_options['fields']['field_las_alias']['field'] = 'field_las_alias';
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -2253,7 +2240,6 @@ function las_userdashboards_views_default_views() {
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),
-    t('You have no student jobs.'),
     t('View panes'),
     t('YourRecentActivity'),
     t('Your Recent Activity'),
@@ -2272,7 +2258,6 @@ function las_userdashboards_views_default_views() {
     t('Recent Student Job Requests'),
     t('There are currently no student jobs that meet your criteria.'),
     t('ChartstringsVBO'),
-    t('Alias'),
   );
   $export['las_dashboard_views'] = $view;
 
