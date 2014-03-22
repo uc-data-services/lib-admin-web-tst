@@ -255,7 +255,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please select an existing chartstring for this student job. ',
+    'description' => 'Please select an existing chartstring for this student job.  If your chartstring does not appear, you can add a new chartstring below. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1150,7 +1150,7 @@ function student_job_field_default_field_instances() {
   t('Minimum Hours/Shift');
   t('Minimum Hours/Week');
   t('New Chartstring');
-  t('Please select an existing chartstring for this student job. ');
+  t('Please select an existing chartstring for this student job.  If your chartstring does not appear, you can add a new chartstring below. ');
   t('Required Qualifications');
   t('Special Notes');
   t('Specific Work Hours');
