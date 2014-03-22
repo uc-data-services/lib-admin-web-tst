@@ -56,6 +56,7 @@ features[field_group][] = group_work_schedule|node|job_student|form
 features[field_instance][] = node-job_student-field_las_add_new_chartstring
 features[field_instance][] = node-job_student-field_las_jobtitle
 features[field_instance][] = node-job_student-field_las_new_chartstring
+features[field_instance][] = node-job_student-field_las_new_chrtstrg
 features[field_instance][] = node-job_student-field_las_supervisor
 features[field_instance][] = node-job_student-field_las_unit_chartstring
 features[field_instance][] = node-job_student-field_las_workstudy

@@ -53,7 +53,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -153,6 +153,52 @@ function student_job_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form_single',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-job_student-field_las_new_chrtstrg'
+  $field_instances['node-job_student-field_las_new_chrtstrg'] = array(
+    'bundle' => 'job_student',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Your chartstring will be forwarded to Library Business Services for adding to the system. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_las_new_chrtstrg',
+    'label' => 'New Chartstring',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 10,
     ),
   );
@@ -189,7 +235,7 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_las_supervisor',
     'label' => 'Student supervisor',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -209,7 +255,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Please select an existing chartstring for this student job. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -244,7 +290,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -337,7 +383,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -474,7 +520,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -922,7 +968,7 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_student_job_q_desired',
     'label' => 'Desired Qualifications',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -1030,7 +1076,7 @@ function student_job_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -1103,6 +1149,8 @@ function student_job_field_default_field_instances() {
   t('Maximum Hours/Week');
   t('Minimum Hours/Shift');
   t('Minimum Hours/Week');
+  t('New Chartstring');
+  t('Please select an existing chartstring for this student job. ');
   t('Required Qualifications');
   t('Special Notes');
   t('Specific Work Hours');
@@ -1115,6 +1163,7 @@ function student_job_field_default_field_instances() {
   t('The minimum number of hours per week this job requires.');
   t('What tasks will students be required to complete?');
   t('Work Study');
+  t('Your chartstring will be forwarded to Library Business Services for adding to the system. ');
 
   return $field_instances;
 }

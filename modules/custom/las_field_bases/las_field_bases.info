@@ -38,6 +38,7 @@ features[field_base][] = field_las_chartfield_2
 features[field_base][] = field_las_chartstring
 features[field_base][] = field_las_jobtitle
 features[field_base][] = field_las_new_chartstring
+features[field_base][] = field_las_new_chrtstrg
 features[field_base][] = field_las_supervisor
 features[field_base][] = field_las_telephone
 features[field_base][] = field_las_unit_chartstring
