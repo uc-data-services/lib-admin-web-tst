@@ -80,15 +80,17 @@ function lhrd_job_rules_default_rules_configuration() {
       "DO" : [
         { "node_unpublish" : { "node" : [ "flagged-node" ] } },
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "4" : "4", "5" : "5" } },
+            "roles" : { "value" : { "4" : "4" } },
             "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]"
+            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+            "from" : "[site:mail]"
           }
         },
         { "mail" : {
             "to" : "[flagged-node:author:mail]",
             "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
             "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+            "from" : "[site:mail]",
             "language" : [ "" ]
           }
         },
@@ -97,22 +99,18 @@ function lhrd_job_rules_default_rules_configuration() {
     }
   }');
   $items['rules_lhrd_request_new_updated_student_job'] = entity_import('rules_config', '{ "rules_lhrd_request_new_updated_student_job" : {
-      "LABEL" : "Request Student Job",
+      "LABEL" : "CreateNewStudentJob",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job post", "student" ],
-      "REQUIRES" : [ "rules" ],
-      "ON" : {
-        "node_insert--job_student" : { "bundle" : "job_student" },
-        "node_update--job_student" : { "bundle" : "job_student" }
-      },
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_insert--job_student" : { "bundle" : "job_student" } },
       "IF" : [
         { "node_is_of_type" : {
             "node" : [ "node" ],
             "type" : { "value" : { "job_student" : "job_student" } }
           }
-        },
-        { "user_has_role" : { "account" : [ "node:author" ], "roles" : { "value" : { "6" : "6" } } } }
+        }
       ],
       "DO" : [
         { "mail" : {
@@ -121,6 +119,19 @@ function lhrd_job_rules_default_rules_configuration() {
             "message" : "You have successfully submitted a job request to the Student Employment Coordinator. It is now pending review.\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid] \\r\\nJob Title: [node:field-las-jobtitle]\\r\\nDepartment: [node:field-unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\nChartstring: [node:field-las-unit-chartstring]",
             "language" : [ "" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : {
+                  "data" : [ "node:field-las-supervisor" ],
+                  "value" : [ "site:current-user" ]
+                }
+              },
+              "DO" : [
+                { "drupal_message" : { "message" : "An email has (NOT YET) been sent to [node:field-las-supervisor]." } }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -132,6 +143,14 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_flagged_unpublish_student_job" : [] },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "flagged-node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "6" : "6" } } } }
+      ],
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "4" : "4" } },
@@ -159,6 +178,14 @@ function lhrd_job_rules_default_rules_configuration() {
       "TAGS" : [ "job", "student" ],
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "flag_unflagged_unpublish_student_job" : [] },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "flagged-node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "6" : "6" } } } }
+      ],
       "DO" : [
         { "node_unpublish" : { "node" : [ "flagged-node" ] } },
         { "flag_unflagnode" : {
