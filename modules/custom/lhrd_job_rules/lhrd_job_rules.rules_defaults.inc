@@ -135,14 +135,14 @@ function lhrd_job_rules_default_rules_configuration() {
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "4" : "4" } },
-            "subject" : "solo ventures",
-            "message" : "more to come.",
-            "from" : "from you"
+            "subject" : "Ready for your review: Student Job Request [flagged-node:nid] [flagged-node:field-las-jobtitle]",
+            "message" : "[flagged-node:author] in the [flagged-node:author:field_unit] department has submitted job request [flagged-node:nid] [flagged-node:field-las-jobtitle] ([flagged-node:field-student-job-classification]) under chartstring [flagged-node:field-las-unit-chartstring].\\r\\n\\r\\nYou may visit the job request at [flagged-node:url] to review and edit the job request.\\r\\n",
+            "from" : "[site:mail]"
           }
         },
         { "mail" : {
             "to" : "[flagging-user:mail]",
-            "subject" : "Student Job [flagged-node:nid] - [flagged-node:status]",
+            "subject" : "Student Job [flagged-node:nid] - [flagged-node:field-las-jobtitle]",
             "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [flagged-node:url]\\t",
             "from" : "[site:mail]",
             "language" : [ "" ]
