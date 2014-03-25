@@ -405,11 +405,11 @@ function las_userdashboards_views_default_views() {
     'title' => 'title',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
-    'field_student_job_workstudy' => 'field_student_job_workstudy',
+    'field_las_workstudy' => 'field_las_workstudy',
     'field_las_unit_chartstring' => 'field_las_unit_chartstring',
-    'name' => 'name',
-    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'flagged' => 'flagged',
     'ops' => 'ops',
+    'flagged_1' => 'flagged_1',
     'edit_node' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -440,7 +440,7 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_student_job_workstudy' => array(
+    'field_las_workstudy' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -454,21 +454,17 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'name' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_lhrd_student_job_workflow' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'flagged' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'ops' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'flagged_1' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -785,10 +781,10 @@ function las_userdashboards_views_default_views() {
     'title' => 'title',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
-    'field_student_job_workstudy' => 'field_student_job_workstudy',
+    'field_las_workstudy' => 'field_las_workstudy',
     'field_las_unit_chartstring' => 'field_las_unit_chartstring',
     'name' => 'name',
-    'field_lhrd_student_job_workflow' => 'field_lhrd_student_job_workflow',
+    'flagged' => 'flagged',
     'ops' => 'ops',
     'edit_node' => 'edit_node',
   );
@@ -820,7 +816,7 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_student_job_workstudy' => array(
+    'field_las_workstudy' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -841,9 +837,7 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_lhrd_student_job_workflow' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'flagged' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
