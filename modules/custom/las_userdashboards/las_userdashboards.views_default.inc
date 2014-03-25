@@ -491,6 +491,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'flag_supervisor';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'unpublish_student_job';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
@@ -498,6 +499,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel_1']['id'] = 'flag_content_rel_1';
   $handler->display->display_options['relationships']['flag_content_rel_1']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel_1']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['label'] = 'flag_analyst';
   $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'publish_job';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -678,10 +680,11 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_student_job_classification']['id'] = 'field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['table'] = 'field_data_field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['field'] = 'field_student_job_classification';
-  /* Field: Content: Work Study */
-  $handler->display->display_options['fields']['field_student_job_workstudy']['id'] = 'field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
+  /* Field: Content: Does this job require work study? */
+  $handler->display->display_options['fields']['field_las_workstudy']['id'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -710,7 +713,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_1']['id'] = 'flagged_1';
   $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_1';
   $handler->display->display_options['fields']['flagged_1']['label'] = 'Published?';
   $handler->display->display_options['fields']['flagged_1']['not'] = 0;
   /* Field: Content: Edit link */
@@ -868,6 +871,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'flag_analyst';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'publish_job';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
@@ -875,7 +879,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel_1']['id'] = 'flag_content_rel_1';
   $handler->display->display_options['relationships']['flag_content_rel_1']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel_1']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['label'] = 'supervisor_flag';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['label'] = 'flag_supervisor';
   $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'unpublish_student_job';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1056,10 +1060,11 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_student_job_classification']['id'] = 'field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['table'] = 'field_data_field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['field'] = 'field_student_job_classification';
-  /* Field: Content: Work Study */
-  $handler->display->display_options['fields']['field_student_job_workstudy']['id'] = 'field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
+  /* Field: Content: Does this job require work study? */
+  $handler->display->display_options['fields']['field_las_workstudy']['id'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -1077,7 +1082,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel_1';
   $handler->display->display_options['fields']['flagged']['label'] = 'Requested?';
   $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Request';
   $handler->display->display_options['fields']['flagged']['type_custom_false'] = 'Draft';
@@ -2270,7 +2275,8 @@ function las_userdashboards_views_default_views() {
     t('There are currently no jobs that meet your criteria.'),
     t('author'),
     t('MyJobRequestsVBO'),
-    t('flag'),
+    t('flag_supervisor'),
+    t('flag_analyst'),
     t('- Choose an operation -'),
     t('Title'),
     t('Department'),
@@ -2285,11 +2291,11 @@ function las_userdashboards_views_default_views() {
     t('Edit'),
     t('Search Terms'),
     t('ManageAllJobsVBO'),
-    t('supervisor_flag'),
     t('Author'),
     t('Requested?'),
     t('Request'),
     t('LBSAnalystVBO'),
+    t('flag'),
     t('Chartstring Check'),
     t('YourStudentJobs'),
     t('Your Student Jobs'),
