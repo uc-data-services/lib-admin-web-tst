@@ -34,6 +34,18 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'access comments'.
+  $permissions['access comments'] = array(
+    'name' => 'access comments',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -377,6 +389,18 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own comments'.
+  $permissions['edit own comments'] = array(
+    'name' => 'edit own comments',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'edit own job_academic content'.
   $permissions['edit own job_academic content'] = array(
     'name' => 'edit own job_academic content',
@@ -494,6 +518,18 @@ function las_permissions_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'total_control',
+  );
+
+  // Exported permission: 'post comments'.
+  $permissions['post comments'] = array(
+    'name' => 'post comments',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'comment',
   );
 
   // Exported permission: 'search content'.
