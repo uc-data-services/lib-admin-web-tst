@@ -9,6 +9,38 @@
  */
 function lhrd_job_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_commentaddedtostudentjob'] = entity_import('rules_config', '{ "rules_commentaddedtostudentjob" : {
+      "LABEL" : "CommentAddedToStudentJob",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "comment" ],
+      "ON" : { "comment_insert--comment_node_job_student" : { "bundle" : "comment_node_job_student" } },
+      "IF" : [
+        { "user_has_role" : {
+            "account" : [ "site:current-user" ],
+            "roles" : { "value" : { "4" : "4", "5" : "5" } },
+            "operation" : "OR"
+          }
+        },
+        { "node_is_of_type" : {
+            "node" : [ "comment:node" ],
+            "type" : { "value" : { "job_student" : "job_student" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "comment:node:field-las-supervisor:mail" ],
+            "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
+            "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\n",
+            "from" : "[site:mail]",
+            "language" : [ "" ]
+          }
+        },
+        { "drupal_message" : { "message" : "Supervisor [comment:node:field-las-supervisor] has been notified about your comment." } }
+      ]
+    }
+  }');
   $items['rules_fill_kronos_supervisor_with_author_if_selected_yes'] = entity_import('rules_config', '{ "rules_fill_kronos_supervisor_with_author_if_selected_yes" : {
       "LABEL" : "fill kronos supervisor with author if selected yes",
       "PLUGIN" : "reaction rule",
