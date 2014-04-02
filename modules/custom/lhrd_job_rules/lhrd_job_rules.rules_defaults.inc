@@ -13,7 +13,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "LABEL" : "CommentAddedToStudentJob",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "comment" ],
+      "REQUIRES" : [ "rules", "flag", "comment" ],
       "ON" : { "comment_insert--comment_node_job_student" : { "bundle" : "comment_node_job_student" } },
       "IF" : [
         { "user_has_role" : {
@@ -29,6 +29,13 @@ function lhrd_job_rules_default_rules_configuration() {
         }
       ],
       "DO" : [
+        { "flag_unflagnode" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "comment:node" ],
+            "flagging_user" : [ "comment:author" ],
+            "permission_check" : 1
+          }
+        },
         { "mail" : {
             "to" : [ "comment:node:field-las-supervisor:mail" ],
             "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
@@ -99,7 +106,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job", "unpost" ],
-      "REQUIRES" : [ "rules", "flag" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
       "ON" : { "flag_unflagged_publish_job" : [] },
       "IF" : [
         { "node_is_of_type" : {
@@ -110,23 +117,31 @@ function lhrd_job_rules_default_rules_configuration() {
         { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "4" : "4" } } } }
       ],
       "DO" : [
-        { "node_unpublish" : { "node" : [ "flagged-node" ] } },
-        { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "4" : "4" } },
-            "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
-            "from" : "[site:mail]"
-          }
-        },
-        { "mail" : {
-            "to" : "[flagged-node:author:mail]",
-            "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
-            "from" : "[site:mail]",
-            "language" : [ "" ]
-          }
-        },
-        { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } }
+        { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "node_is_published" : { "node" : [ "flagged-node" ] } },
+              "DO" : [
+                { "node_unpublish" : { "node" : [ "flagged-node" ] } },
+                { "mail_to_users_of_role" : {
+                    "roles" : { "value" : { "4" : "4" } },
+                    "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
+                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+                    "from" : "[site:mail]"
+                  }
+                },
+                { "mail" : {
+                    "to" : "[flagged-node:author:mail]",
+                    "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
+                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+                    "from" : "[site:mail]",
+                    "language" : [ "" ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
       ]
     }
   }');
