@@ -8,6 +8,7 @@ function las_userdashboards_install() {
 
   // list of views to disable
   $viewnames = array(
+    'control_comments',
     'control_content',
     'control_content_panes',
     'control_my_content_panes',
