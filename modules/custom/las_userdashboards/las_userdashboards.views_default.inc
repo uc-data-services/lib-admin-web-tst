@@ -93,23 +93,14 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['relationship'] = 'nid';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit Student Job';
-  /* Field: Comment: Title */
-  $handler->display->display_options['fields']['subject']['id'] = 'subject';
-  $handler->display->display_options['fields']['subject']['table'] = 'comment';
-  $handler->display->display_options['fields']['subject']['field'] = 'subject';
-  $handler->display->display_options['fields']['subject']['label'] = 'Comment Title';
-  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
-  /* Field: Comment: Author */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'comment';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = 'Comment Author';
-  /* Field: Comment: Delete link */
-  $handler->display->display_options['fields']['delete_comment']['id'] = 'delete_comment';
-  $handler->display->display_options['fields']['delete_comment']['table'] = 'comment';
-  $handler->display->display_options['fields']['delete_comment']['field'] = 'delete_comment';
-  $handler->display->display_options['fields']['delete_comment']['label'] = 'Delete Comment';
+  /* Field: Comment: Rendered Comment */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_comment';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -151,9 +142,7 @@ function las_userdashboards_views_default_views() {
     t('User entity referenced from field_las_supervisor'),
     t('Student Job'),
     t('Edit Student Job'),
-    t('Comment Title'),
-    t('Comment Author'),
-    t('Delete Comment'),
+    t('Rendered Comment'),
     t('Content pane'),
     t('View panes'),
   );
