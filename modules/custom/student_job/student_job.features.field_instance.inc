@@ -32,7 +32,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -75,7 +75,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -122,7 +122,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -175,7 +175,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -267,7 +267,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -359,7 +359,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -409,7 +409,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -454,7 +454,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -499,7 +499,7 @@ function student_job_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -908,7 +908,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1053,7 +1053,7 @@ function student_job_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',

@@ -543,6 +543,18 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'search',
   );
 
+  // Exported permission: 'skip comment approval'.
+  $permissions['skip comment approval'] = array(
+    'name' => 'skip comment approval',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'unflag las_lbschartstringcheck'.
   $permissions['unflag las_lbschartstringcheck'] = array(
     'name' => 'unflag las_lbschartstringcheck',
