@@ -107,6 +107,49 @@ user/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ldap_profile_conf';
+  $strongarm->value = array(
+    'ldap_fields' => array(
+      0 => 'uid, uid',
+      1 => 'mail, mail',
+    ),
+    'mapping' => array(
+      'username' => 'uid, uid',
+      'mail' => 'mail, mail',
+      'field_las_telephone' => 'telephonenumber',
+      'field_las_affiliations' => 'berkeleyeduaffiliations',
+      'field_las_calnet_modd' => 'berkeleyedumoddate',
+      'field_las_working_title' => 'title',
+      'field_las_address' => 'postaladdress',
+    ),
+    'derivedMapping' => array(
+      'field_las_telephone' => array(
+        'derive' => FALSE,
+        'derive_value' => '',
+      ),
+      'field_las_affiliations' => array(
+        'derive' => FALSE,
+        'derive_value' => '',
+      ),
+      'field_las_calnet_modd' => array(
+        'derive' => FALSE,
+        'derive_value' => '',
+      ),
+      'field_las_working_title' => array(
+        'derive' => FALSE,
+        'derive_value' => '',
+      ),
+      'field_las_address' => array(
+        'derive' => FALSE,
+        'derive_value' => '',
+      ),
+    ),
+  );
+  $export['ldap_profile_conf'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_las_user_feeds_import';
   $strongarm->value = array(
     0 => 'main-menu',
