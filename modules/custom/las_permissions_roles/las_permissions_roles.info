@@ -91,4 +91,5 @@ features[user_permission][] = view revisions
 features[user_permission][] = view the administration theme
 features[user_role][] = HR Analyst
 features[user_role][] = LBS Analyst
+features[user_role][] = Staff
 features[user_role][] = Student Supervisor

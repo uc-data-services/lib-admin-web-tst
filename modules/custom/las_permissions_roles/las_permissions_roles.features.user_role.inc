@@ -22,6 +22,12 @@ function las_permissions_roles_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: Staff.
+  $roles['Staff'] = array(
+    'name' => 'Staff',
+    'weight' => 11,
+  );
+
   // Exported role: Student Supervisor.
   $roles['Student Supervisor'] = array(
     'name' => 'Student Supervisor',
