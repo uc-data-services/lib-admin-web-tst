@@ -395,7 +395,6 @@ function las_permissions_roles_user_default_permissions() {
     'roles' => array(
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
-      'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
@@ -526,7 +525,6 @@ function las_permissions_roles_user_default_permissions() {
     'roles' => array(
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
-      'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
@@ -549,7 +547,6 @@ function las_permissions_roles_user_default_permissions() {
     'roles' => array(
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
-      'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
