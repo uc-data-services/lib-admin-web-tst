@@ -40,7 +40,6 @@ function lhrd_job_rules_default_rules_configuration() {
             "to" : [ "comment:node:field-las-supervisor:mail" ],
             "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
             "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\n",
-            "from" : "[site:mail]",
             "language" : [ "" ]
           }
         },
@@ -93,12 +92,11 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "5" : "5" } },
             "subject" : "Ready for your review: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "Student Job [flagged-node:nid] [flagged-node:title] for the [flagged-node:field-unit] department was approved and is posted. Please visit the job request at [flagged-node:edit-url] to review and edit the chartstring ([flagged-node:field-las-unit-chartstring]) as needed.",
-            "from" : "[site:mail]"
+            "message" : "Student Job [flagged-node:nid] [flagged-node:title] for the [flagged-node:field-unit] department was approved and is posted. Please visit the job request at [flagged-node:edit-url] to review and edit the chartstring ([flagged-node:field-las-unit-chartstring]) as needed."
           }
         },
         { "mail" : {
-            "to" : "[flagged-node:author:mail]",
+            "to" : [ "flagged-node:field-las-supervisor:mail" ],
             "subject" : "Approved and posted: Student Job [flagged-node:nid] [flagged-node:title]",
             "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
             "language" : [ "" ]
@@ -133,15 +131,13 @@ function lhrd_job_rules_default_rules_configuration() {
                 { "mail_to_users_of_role" : {
                     "roles" : { "value" : { "4" : "4" } },
                     "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
-                    "from" : "[site:mail]"
+                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]"
                   }
                 },
                 { "mail" : {
-                    "to" : "[flagged-node:author:mail]",
+                    "to" : [ "flagged-node:field-las-supervisor:mail" ],
                     "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
                     "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
-                    "from" : "[site:mail]",
                     "language" : [ "" ]
                   }
                 }
@@ -209,15 +205,13 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "4" : "4" } },
             "subject" : "Ready for your review: Student Job Request [flagged-node:nid] [flagged-node:field-las-jobtitle]",
-            "message" : "[flagged-node:author] in the [flagged-node:author:field_unit] department has submitted job request [flagged-node:nid] [flagged-node:field-las-jobtitle] ([flagged-node:field-student-job-classification]) under chartstring [flagged-node:field-las-unit-chartstring].\\r\\n\\r\\nYou may visit the job request at [flagged-node:url] to review and edit the job request.\\r\\n",
-            "from" : "[site:mail]"
+            "message" : "[flagged-node:author] in the [flagged-node:author:field_unit] department has submitted job request [flagged-node:nid] [flagged-node:field-las-jobtitle] ([flagged-node:field-student-job-classification]) under chartstring [flagged-node:field-las-unit-chartstring].\\r\\n\\r\\nYou may visit the job request at [flagged-node:url] to review and edit the job request.\\r\\n"
           }
         },
         { "mail" : {
-            "to" : "[flagging-user:mail]",
+            "to" : [ "flagged-node:field-las-supervisor:mail" ],
             "subject" : "Student Job [flagged-node:nid] - [flagged-node:field-las-jobtitle]",
             "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [flagged-node:url]\\t",
-            "from" : "[site:mail]",
             "language" : [ "" ]
           }
         },
