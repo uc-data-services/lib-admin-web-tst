@@ -33,13 +33,14 @@ function las_user_feeds_importer_default() {
       'plugin_key' => 'FeedsUserProcessor',
       'config' => array(
         'roles' => array(
+          7 => '7',
           6 => 0,
           4 => 0,
           5 => 0,
           3 => 0,
         ),
         'status' => '1',
-        'defuse_mail' => 0,
+        'defuse_mail' => 1,
         'mappings' => array(
           0 => array(
             'source' => 'uid',
