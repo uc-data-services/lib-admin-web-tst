@@ -669,7 +669,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The maximum number of hours per week this job requires.',
+    'description' => 'The maximum number of hours per week this job requires. Students can work a maximum of 16 hours per week, or 40 hours per week during Summer.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -702,6 +702,7 @@ function student_job_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_student_job_maxweeklyhours',
     'label' => 'Maximum Hours/Week',
@@ -1158,7 +1159,7 @@ function student_job_field_default_field_instances() {
   t('Student supervisor');
   t('The classification for this job.');
   t('The desired qualifications for this job.');
-  t('The maximum number of hours per week this job requires.');
+  t('The maximum number of hours per week this job requires. Students can work a maximum of 16 hours per week, or 40 hours per week during Summer.');
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
   t('What tasks will students be required to complete?');
