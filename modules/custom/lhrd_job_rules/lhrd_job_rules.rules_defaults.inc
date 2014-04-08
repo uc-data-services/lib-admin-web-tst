@@ -182,7 +182,8 @@ function lhrd_job_rules_default_rules_configuration() {
               ]
             }
           ]
-        }
+        },
+        { "redirect" : { "url" : "[node:url]-[node:nid]" } }
       ]
     }
   }');
