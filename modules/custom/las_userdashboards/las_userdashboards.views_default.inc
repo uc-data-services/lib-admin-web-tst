@@ -432,6 +432,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Current */
@@ -928,6 +929,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
+    'created' => 'created',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
     'field_las_workstudy' => 'field_las_workstudy',
@@ -946,6 +948,13 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
