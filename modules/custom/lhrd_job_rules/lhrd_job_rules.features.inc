@@ -63,7 +63,7 @@ function lhrd_job_rules_flag_default_flags() {
     'unflag_long' => 'Unpublish this student job. ',
     'unflag_message' => 'This student job has been unpublished. ',
     'unflag_denied_text' => '',
-    'link_type' => 'toggle',
+    'link_type' => 'normal',
     'weight' => 0,
     'show_in_links' => array(
       'full' => 'full',
@@ -102,7 +102,7 @@ function lhrd_job_rules_flag_default_flags() {
     'unflag_long' => 'Unpost this Student Job',
     'unflag_message' => 'This student job has been unposted.',
     'unflag_denied_text' => 'You cannot use this flag.',
-    'link_type' => 'toggle',
+    'link_type' => 'normal',
     'weight' => 0,
     'show_in_links' => array(
       'full' => 'full',
