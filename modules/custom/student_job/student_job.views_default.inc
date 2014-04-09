@@ -179,11 +179,11 @@ function student_job_views_default_views() {
   $handler->display->display_options['fields']['field_student_job_classification']['id'] = 'field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['table'] = 'field_data_field_student_job_classification';
   $handler->display->display_options['fields']['field_student_job_classification']['field'] = 'field_student_job_classification';
-  /* Field: Content: Work Study */
-  $handler->display->display_options['fields']['field_student_job_workstudy']['id'] = 'field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['table'] = 'field_data_field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['field'] = 'field_student_job_workstudy';
-  $handler->display->display_options['fields']['field_student_job_workstudy']['element_label_colon'] = FALSE;
+  /* Field: Content: Does this job require work study? */
+  $handler->display->display_options['fields']['field_las_workstudy']['id'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
+  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
