@@ -23,7 +23,7 @@ function lhrd_configuration_ckeditor_profile_defaults() {
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\'],
     [\'SpellChecker\',\'Scayt\'],
     [\'Find\',\'Replace\',\'SelectAll\'],
-    [\'RemoveFormat\',\'SpecialChar\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'Link\',\'Unlink\']
+    [\'RemoveFormat\',\'NumberedList\',\'BulletedList\',\'Link\',\'Unlink\']
 ]',
         'expand' => 't',
         'width' => '100%',
