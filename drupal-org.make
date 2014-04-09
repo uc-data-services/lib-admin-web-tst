@@ -50,6 +50,7 @@ projects[diff][version] = "3.2"
 
 projects[ds][subdir] = "contrib"
 projects[ds][version] = "2.6"
+projects[ds][patches][] = "https://drupal.org/files/fails_to_load_ds_fields_info_file-1822168-24.patch"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.3"
