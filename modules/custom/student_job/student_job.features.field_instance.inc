@@ -103,60 +103,6 @@ function student_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job_student-field_las_new_chartstring'
-  $field_instances['node-job_student-field_las_new_chartstring'] = array(
-    'bundle' => 'job_student',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_las_new_chartstring',
-    'label' => 'Add new chartstring',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'inline_entity_form',
-      'settings' => array(
-        'fields' => array(),
-        'type_settings' => array(
-          'allow_existing' => FALSE,
-          'delete_references' => 0,
-          'label_plural' => 'nodes',
-          'label_singular' => 'node',
-          'match_operator' => 'CONTAINS',
-          'override_labels' => 0,
-        ),
-      ),
-      'type' => 'inline_entity_form_single',
-      'weight' => 18,
-    ),
-  );
-
   // Exported field_instance: 'node-job_student-field_las_new_chrtstrg'
   $field_instances['node-job_student-field_las_new_chrtstrg'] = array(
     'bundle' => 'job_student',
@@ -1134,7 +1080,6 @@ function student_job_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add a new chartstring?');
-  t('Add new chartstring');
   t('Are you the Kronos Supervisor?');
   t('Chartstring');
   t('Classification');
