@@ -166,7 +166,7 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail" : {
             "to" : "[node:author:mail]",
             "subject" : "Student Job Request [node:nid] [node:field-las-jobtitle]",
-            "message" : "You have successfully submitted a job request to the Student Employment Coordinator. It is now pending review.\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid] \\r\\nJob Title: [node:field-las-jobtitle]\\r\\nDepartment: [node:field-unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\nChartstring: [node:field-las-unit-chartstring]",
+            "message" : "You have successfully submitted a job request to the Student Employment Coordinator. It is now pending review.\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid] \\r\\nJob Title: [node:field-las-jobtitle]\\r\\nDepartment: [node:field-unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\nChartstring: [node:field-las-unit-chartstring]\\r\\nRequested By: [node:author]",
             "language" : [ "" ]
           }
         },
@@ -178,7 +178,14 @@ function lhrd_job_rules_default_rules_configuration() {
                 }
               },
               "DO" : [
-                { "drupal_message" : { "message" : "An email has (NOT YET) been sent to [node:field-las-supervisor]." } }
+                { "mail" : {
+                    "to" : "[node:field-las-supervisor]",
+                    "subject" : "Student Job Request [node:nid] [node:field-las-jobtitle]",
+                    "message" : "You have successfully submitted a job request to the Student Employment Coordinator. It is now pending review.\\r\\n\\r\\nJob Information:\\r\\nURL: [node:url]\\r\\nJob ID: [node:nid] \\r\\nJob Title: [node:field-las-jobtitle]\\r\\nDepartment: [node:field-unit]\\r\\nClassification: [node:field_student_job_classification]\\r\\nChartstring: [node:field-las-unit-chartstring]\\r\\nRequested By: [node:author]",
+                    "language" : [ "" ]
+                  }
+                },
+                { "drupal_message" : { "message" : "An email has been sent to [node:field-las-supervisor]." } }
               ]
             }
           ]
