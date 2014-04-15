@@ -288,51 +288,6 @@ function student_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job_student-field_lhrd_job_qdesired'
-  $field_instances['node-job_student-field_lhrd_job_qdesired'] = array(
-    'bundle' => 'job_student',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'The desired qualifications for this job.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lhrd_job_qdesired',
-    'label' => 'Desired Qualifications',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 22,
-    ),
-  );
-
   // Exported field_instance: 'node-job_student-field_lhrd_krns_is_stdn_super'
   $field_instances['node-job_student-field_lhrd_krns_is_stdn_super'] = array(
     'bundle' => 'job_student',
@@ -424,49 +379,6 @@ function student_job_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-job_student-field_lhrd_student_job_workflow'
-  $field_instances['node-job_student-field_lhrd_student_job_workflow'] = array(
-    'bundle' => 'job_student',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 16,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lhrd_student_job_workflow',
-    'label' => 'Job Request Status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 19,
     ),
   );
 
@@ -978,55 +890,6 @@ function student_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job_student-field_student_job_workstudy'
-  $field_instances['node-job_student-field_student_job_workstudy'] = array(
-    'bundle' => 'job_student',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Does this job require work study?',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_student_job_workstudy',
-    'label' => 'Work Study',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 21,
-    ),
-  );
-
   // Exported field_instance: 'node-job_student-field_unit'
   $field_instances['node-job_student-field_unit'] = array(
     'bundle' => 'job_student',
@@ -1090,7 +953,6 @@ function student_job_field_default_field_instances() {
   t('How many students will be hired for this job?');
   t('If this job requires any specific work hours, enter them here.');
   t('Job Duties');
-  t('Job Request Status');
   t('Kronos Supervisor');
   t('Maximum Hours/Week');
   t('Minimum Hours/Shift');
@@ -1103,12 +965,10 @@ function student_job_field_default_field_instances() {
   t('Student Job Title');
   t('Student supervisor');
   t('The classification for this job.');
-  t('The desired qualifications for this job.');
   t('The maximum number of hours per week this job requires. Students can work a maximum of 16 hours per week, or 40 hours per week during Summer.');
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
   t('What tasks will students be required to complete?');
-  t('Work Study');
   t('Your chartstring will be forwarded to Library Business Services for adding to the system. ');
 
   return $field_instances;
