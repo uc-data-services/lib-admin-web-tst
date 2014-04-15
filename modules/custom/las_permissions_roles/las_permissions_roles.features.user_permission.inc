@@ -18,6 +18,7 @@ function las_permissions_roles_user_default_permissions() {
       'LBS Analyst' => 'LBS Analyst',
       'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'admin_theme',
   );
@@ -30,6 +31,7 @@ function las_permissions_roles_user_default_permissions() {
       'LBS Analyst' => 'LBS Analyst',
       'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'admin_menu',
   );
@@ -38,9 +40,15 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['access comments'] = array(
     'name' => 'access comments',
     'roles' => array(
+      'AUL' => 'AUL',
+      'Department Head' => 'Department Head',
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
+      'Librarian' => 'Librarian',
+      'SDC' => 'SDC',
+      'Staff' => 'Staff',
       'Student Supervisor' => 'Student Supervisor',
+      'Supervisor' => 'Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
@@ -83,9 +91,15 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
+      'AUL' => 'AUL',
+      'Department Head' => 'Department Head',
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
+      'Librarian' => 'Librarian',
+      'SDC' => 'SDC',
+      'Staff' => 'Staff',
       'Student Supervisor' => 'Student Supervisor',
+      'Supervisor' => 'Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
