@@ -1233,7 +1233,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_workstudy']['id'] = 'field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
-  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
+  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study Required?';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -1262,9 +1262,20 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel_1';
   $handler->display->display_options['fields']['flagged']['label'] = 'Requested?';
-  $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Request';
+  $handler->display->display_options['fields']['flagged']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Requested';
   $handler->display->display_options['fields']['flagged']['type_custom_false'] = 'Draft';
   $handler->display->display_options['fields']['flagged']['not'] = 0;
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_2']['id'] = 'flagged_2';
+  $handler->display->display_options['fields']['flagged_2']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_2']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_2']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged_2']['label'] = 'Published?';
+  $handler->display->display_options['fields']['flagged_2']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_2']['type_custom_true'] = 'Published';
+  $handler->display->display_options['fields']['flagged_2']['type_custom_false'] = 'Unpublished';
+  $handler->display->display_options['fields']['flagged_2']['not'] = 0;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
@@ -2665,10 +2676,12 @@ function las_userdashboards_views_default_views() {
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
     t('Date Created'),
+    t('Work Study Required?'),
     t('Chartstring Approved?'),
     t('Student Supervisor'),
     t('Requested?'),
-    t('Request'),
+    t('Published'),
+    t('Unpublished'),
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),
