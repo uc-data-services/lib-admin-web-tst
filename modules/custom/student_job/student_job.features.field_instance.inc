@@ -53,7 +53,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -145,7 +145,7 @@ function student_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -236,7 +236,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -285,6 +285,51 @@ function student_job_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-job_student-field_las_workstudy_whynot'
+  $field_instances['node-job_student-field_las_workstudy_whynot'] = array(
+    'bundle' => 'job_student',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_las_workstudy_whynot',
+    'label' => 'Why does this job not require work study?',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
     ),
   );
 
@@ -471,7 +516,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -740,7 +785,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -792,7 +837,7 @@ function student_job_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -839,7 +884,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -886,7 +931,7 @@ function student_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -969,6 +1014,7 @@ function student_job_field_default_field_instances() {
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
   t('What tasks will students be required to complete?');
+  t('Why does this job not require work study?');
   t('Your chartstring will be forwarded to Library Business Services for adding to the system. ');
 
   return $field_instances;
