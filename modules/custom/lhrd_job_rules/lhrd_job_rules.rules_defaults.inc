@@ -39,7 +39,7 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail" : {
             "to" : [ "comment:node:field-las-supervisor:mail" ],
             "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
-            "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\n",
+            "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\nRequested By: [comment:node:author]\\r\\n",
             "language" : [ "" ]
           }
         },
@@ -98,7 +98,7 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail" : {
             "to" : [ "flagged-node:field-las-supervisor:mail" ],
             "subject" : "Approved and posted: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+            "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
             "language" : [ "" ]
           }
         },
@@ -131,13 +131,13 @@ function lhrd_job_rules_default_rules_configuration() {
                 { "mail_to_users_of_role" : {
                     "roles" : { "value" : { "4" : "4" } },
                     "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]"
+                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]"
                   }
                 },
                 { "mail" : {
                     "to" : [ "flagged-node:field-las-supervisor:mail" ],
                     "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
-                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]",
+                    "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
                     "language" : [ "" ]
                   }
                 }
