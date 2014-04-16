@@ -85,6 +85,11 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['field_las_supervisor_target_id']['table'] = 'field_data_field_las_supervisor';
   $handler->display->display_options['relationships']['field_las_supervisor_target_id']['field'] = 'field_las_supervisor_target_id';
   $handler->display->display_options['relationships']['field_las_supervisor_target_id']['relationship'] = 'nid';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['relationship'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -110,6 +115,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Comment: Approved */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
@@ -123,6 +132,14 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'field_las_supervisor_target_id';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current']['group'] = 2;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current_1']['id'] = 'uid_current_1';
+  $handler->display->display_options['filters']['uid_current_1']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current_1']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current_1']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['uid_current_1']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current_1']['group'] = 2;
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -144,6 +161,7 @@ function las_userdashboards_views_default_views() {
     t('last »'),
     t('Content'),
     t('User entity referenced from field_las_supervisor'),
+    t('author'),
     t('Student Job'),
     t('Edit Student Job'),
     t('Rendered Comment'),
@@ -642,6 +660,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'publish_job';
   $handler->display->display_options['relationships']['flag_content_rel_1']['user_scope'] = 'any';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['id'] = 'field_las_supervisor_target_id';
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['table'] = 'field_data_field_las_supervisor';
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['field'] = 'field_las_supervisor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -868,6 +890,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -877,16 +903,11 @@ function las_userdashboards_views_default_views() {
     'job_student' => 'job_student',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: User: Current */
-  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
-  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
-  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
-  $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['uid_current']['value'] = '1';
   /* Filter criterion: Search: Search Terms */
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
   $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
   $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
@@ -900,6 +921,20 @@ function las_userdashboards_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['uid_current']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current']['group'] = 2;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current_1']['id'] = 'uid_current_1';
+  $handler->display->display_options['filters']['uid_current_1']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current_1']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current_1']['relationship'] = 'field_las_supervisor_target_id';
+  $handler->display->display_options['filters']['uid_current_1']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current_1']['group'] = 2;
   $handler->display->display_options['path'] = 'admin/dashboard/my-job-requests';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'My Job Requests';
@@ -1388,6 +1423,15 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'You have no student jobs.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['id'] = 'field_las_supervisor_target_id';
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['table'] = 'field_data_field_las_supervisor';
+  $handler->display->display_options['relationships']['field_las_supervisor_target_id']['field'] = 'field_las_supervisor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1415,6 +1459,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -1430,7 +1478,14 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
-  $handler->display->display_options['filters']['uid_current']['group'] = 1;
+  $handler->display->display_options['filters']['uid_current']['group'] = 2;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current_1']['id'] = 'uid_current_1';
+  $handler->display->display_options['filters']['uid_current_1']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current_1']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current_1']['relationship'] = 'field_las_supervisor_target_id';
+  $handler->display->display_options['filters']['uid_current_1']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current_1']['group'] = 2;
 
   /* Display: YourRecentActivity */
   $handler = $view->new_display('panel_pane', 'YourRecentActivity', 'panel_pane_2');
@@ -2660,6 +2715,7 @@ function las_userdashboards_views_default_views() {
     t('MyJobRequestsVBO'),
     t('flag_supervisor'),
     t('flag_analyst'),
+    t('User entity referenced from field_las_supervisor'),
     t('- Choose an operation -'),
     t('Title'),
     t('Department'),
