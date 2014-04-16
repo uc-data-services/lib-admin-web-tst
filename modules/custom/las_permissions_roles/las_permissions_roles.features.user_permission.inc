@@ -36,6 +36,19 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'access administration pages'.
+  $permissions['access administration pages'] = array(
+    'name' => 'access administration pages',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'system',
+  );
+
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
@@ -525,9 +538,15 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['have total control'] = array(
     'name' => 'have total control',
     'roles' => array(
+      'AUL' => 'AUL',
+      'Department Head' => 'Department Head',
       'HR Analyst' => 'HR Analyst',
       'LBS Analyst' => 'LBS Analyst',
+      'Librarian' => 'Librarian',
+      'SDC' => 'SDC',
+      'Staff' => 'Staff',
       'Student Supervisor' => 'Student Supervisor',
+      'Supervisor' => 'Supervisor',
       'administrator' => 'administrator',
     ),
     'module' => 'total_control',
@@ -696,6 +715,7 @@ function las_permissions_roles_user_default_permissions() {
       'LBS Analyst' => 'LBS Analyst',
       'Student Supervisor' => 'Student Supervisor',
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'system',
   );
