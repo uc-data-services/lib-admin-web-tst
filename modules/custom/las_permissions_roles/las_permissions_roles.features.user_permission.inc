@@ -152,6 +152,7 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['create las_chartstring content'] = array(
     'name' => 'create las_chartstring content',
     'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -226,6 +227,7 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['delete any las_chartstring content'] = array(
     'name' => 'delete any las_chartstring content',
     'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -301,6 +303,7 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['delete own las_chartstring content'] = array(
     'name' => 'delete own las_chartstring content',
     'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -375,6 +378,7 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['edit any las_chartstring content'] = array(
     'name' => 'edit any las_chartstring content',
     'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -461,6 +465,7 @@ function las_permissions_roles_user_default_permissions() {
   $permissions['edit own las_chartstring content'] = array(
     'name' => 'edit own las_chartstring content',
     'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
