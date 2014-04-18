@@ -1080,6 +1080,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel_2']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel_2']['flag'] = 'las_lbschartstringcheck';
   $handler->display->display_options['relationships']['flag_content_rel_2']['user_scope'] = 'any';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -1253,6 +1257,20 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Date Created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Requested By';
+  /* Field: Field: Supervisor */
+  $handler->display->display_options['fields']['field_las_supervisor']['id'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['table'] = 'field_data_field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -1283,20 +1301,12 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_2';
   $handler->display->display_options['fields']['flagged_1']['label'] = 'Chartstring Approved?';
   $handler->display->display_options['fields']['flagged_1']['not'] = 0;
-  /* Field: Field: Supervisor */
-  $handler->display->display_options['fields']['field_las_supervisor']['id'] = 'field_las_supervisor';
-  $handler->display->display_options['fields']['field_las_supervisor']['table'] = 'field_data_field_las_supervisor';
-  $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
-  $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
-  $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel_1';
-  $handler->display->display_options['fields']['flagged']['label'] = 'Requested?';
+  $handler->display->display_options['fields']['flagged']['label'] = 'Job Requested?';
   $handler->display->display_options['fields']['flagged']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Requested';
   $handler->display->display_options['fields']['flagged']['type_custom_false'] = 'Draft';
@@ -1306,7 +1316,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_2']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_2']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_2']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged_2']['label'] = 'Published?';
+  $handler->display->display_options['fields']['flagged_2']['label'] = 'Job Published?';
   $handler->display->display_options['fields']['flagged_2']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_2']['type_custom_true'] = 'Published';
   $handler->display->display_options['fields']['flagged_2']['type_custom_false'] = 'Unpublished';
@@ -2739,10 +2749,12 @@ function las_userdashboards_views_default_views() {
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
     t('Date Created'),
+    t('Requested By'),
+    t('Student Supervisor'),
     t('Work Study Required?'),
     t('Chartstring Approved?'),
-    t('Student Supervisor'),
-    t('Requested?'),
+    t('Job Requested?'),
+    t('Job Published?'),
     t('Published'),
     t('Unpublished'),
     t('YourStudentJobs'),
