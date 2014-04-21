@@ -13,7 +13,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "LABEL" : "CommentAddedToStudentJob",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "flag", "comment" ],
+      "REQUIRES" : [ "rules", "flag", "rules_conditional", "comment" ],
       "ON" : { "comment_insert--comment_node_job_student" : { "bundle" : "comment_node_job_student" } },
       "IF" : [
         { "user_has_role" : {
@@ -37,11 +37,31 @@ function lhrd_job_rules_default_rules_configuration() {
           }
         },
         { "mail" : {
-            "to" : [ "comment:node:field-las-supervisor:mail" ],
+            "to" : [ "comment:node:author:mail" ],
             "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
             "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\nRequested By: [comment:node:author]\\r\\n",
             "language" : [ "" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : {
+                  "data" : [ "comment:node:field-las-supervisor" ],
+                  "value" : [ "comment:node:author" ]
+                }
+              },
+              "DO" : [
+                { "mail" : {
+                    "to" : [ "comment:node:field-las-supervisor:mail" ],
+                    "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
+                    "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\nRequested By: [comment:node:author]\\r\\n",
+                    "language" : [ "" ]
+                  }
+                },
+                { "drupal_message" : { "message" : "An email has been sent to [comment:node:field-las-supervisor]." } }
+              ]
+            }
+          ]
         },
         { "drupal_message" : { "message" : "Supervisor [comment:node:field-las-supervisor] has been notified about your comment." } }
       ]
@@ -77,7 +97,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job post" ],
-      "REQUIRES" : [ "rules", "flag" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
       "ON" : { "flag_flagged_publish_job" : [] },
       "IF" : [
         { "node_is_of_type" : {
@@ -96,11 +116,31 @@ function lhrd_job_rules_default_rules_configuration() {
           }
         },
         { "mail" : {
-            "to" : [ "flagged-node:field-las-supervisor:mail" ],
+            "to" : [ "flagged-node:author:mail" ],
             "subject" : "Approved and posted: Student Job [flagged-node:nid] [flagged-node:title]",
             "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
             "language" : [ "" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : {
+                  "data" : [ "flagged-node:field-las-supervisor" ],
+                  "value" : [ "flagged-node:author" ]
+                }
+              },
+              "DO" : [
+                { "mail" : {
+                    "to" : [ "flagged-node:field-las-supervisor:mail" ],
+                    "subject" : "Approved and posted: Student Job [flagged-node:nid] [flagged-node:title]",
+                    "message" : "Your job has been posted and is now open to receive applications.\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
+                    "language" : [ "" ]
+                  }
+                },
+                { "drupal_message" : { "message" : "An email has been sent to [flagged-node:field-las-supervisor]." } }
+              ]
+            }
+          ]
         },
         { "drupal_message" : { "message" : "[flagged-node:title] has been published." } }
       ]
@@ -122,7 +162,6 @@ function lhrd_job_rules_default_rules_configuration() {
         { "user_has_role" : { "account" : [ "flagging-user" ], "roles" : { "value" : { "4" : "4" } } } }
       ],
       "DO" : [
-        { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } },
         { "CONDITIONAL" : [
             {
               "IF" : { "node_is_published" : { "node" : [ "flagged-node" ] } },
@@ -135,16 +174,37 @@ function lhrd_job_rules_default_rules_configuration() {
                   }
                 },
                 { "mail" : {
-                    "to" : [ "flagged-node:field-las-supervisor:mail" ],
+                    "to" : [ "flagged-node:author:mail" ],
                     "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
                     "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
                     "language" : [ "" ]
                   }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT data_is" : {
+                          "data" : [ "flagged-node:field-las-supervisor" ],
+                          "value" : [ "flagged-node:author" ]
+                        }
+                      },
+                      "DO" : [
+                        { "mail" : {
+                            "to" : [ "flagged-node:field-las-supervisor:mail" ],
+                            "subject" : "Closed: Student Job [flagged-node:nid] [flagged-node:title]",
+                            "message" : "The following student job has been closed and is no longer accepting applications:\\r\\n\\r\\nJob Information:\\r\\nURL: [flagged-node:url]\\r\\nJob ID: [flagged-node:nid]\\r\\nJob Title: [flagged-node:title]\\r\\nDepartment: [flagged-node:field-unit]\\r\\nClassification: [flagged-node:field-student-job-classification]\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]\\r\\nRequested By: [flagged-node:author]",
+                            "language" : [ "" ]
+                          }
+                        },
+                        { "drupal_message" : { "message" : "An email has been sent to [flagged-node:field-las-supervisor]." } }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
           ]
-        }
+        },
+        { "drupal_message" : { "message" : "[flagged-node:title] has been unpublished." } }
       ]
     }
   }');
@@ -199,7 +259,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "job", "student" ],
-      "REQUIRES" : [ "rules", "flag" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
       "ON" : { "flag_flagged_unpublish_student_job" : [] },
       "IF" : [
         { "node_is_of_type" : {
@@ -213,15 +273,35 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "4" : "4" } },
             "subject" : "Ready for your review: Student Job Request [flagged-node:nid] [flagged-node:field-las-jobtitle]",
-            "message" : "[flagged-node:author] in the [flagged-node:author:field_unit] department has submitted job request [flagged-node:nid] [flagged-node:field-las-jobtitle] ([flagged-node:field-student-job-classification]) under chartstring [flagged-node:field-las-unit-chartstring].\\r\\n\\r\\nYou may visit the job request at [flagged-node:url] to review and edit the job request.\\r\\n"
+            "message" : "[flagged-node:field-las-supervisor] in the [flagged-node:field-las-supervisor:field_unit] department has submitted job request [flagged-node:nid] [flagged-node:field-las-jobtitle] ([flagged-node:field-student-job-classification]) under chartstring [flagged-node:field-las-unit-chartstring].\\r\\n\\r\\nYou may visit the job request at [flagged-node:url] to review and edit the job request.\\r\\n"
           }
         },
         { "mail" : {
-            "to" : [ "flagged-node:field-las-supervisor:mail" ],
+            "to" : [ "flagged-node:author:mail" ],
             "subject" : "Student Job [flagged-node:nid] - [flagged-node:field-las-jobtitle]",
             "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [flagged-node:url]\\t",
             "language" : [ "" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : {
+                  "data" : [ "flagged-node:field-las-supervisor" ],
+                  "value" : [ "flagged-node:author" ]
+                }
+              },
+              "DO" : [
+                { "mail" : {
+                    "to" : [ "flagged-node:field-las-supervisor:mail" ],
+                    "subject" : "Student Job [flagged-node:nid] - [flagged-node:field-las-jobtitle]",
+                    "message" : "Your student requisition has been received. You job request will be reviewed and posted as soon as possible.  Once its posted you will receive an email. If there, are problems you will receive an email with a note about the problem. [flagged-node:url]\\t",
+                    "language" : [ "" ]
+                  }
+                },
+                { "drupal_message" : { "message" : "An email has been sent to [flagged-node:field-las-supervisor]." } }
+              ]
+            }
+          ]
         },
         { "drupal_message" : { "message" : "Your student job has been requested for posting." } }
       ]
