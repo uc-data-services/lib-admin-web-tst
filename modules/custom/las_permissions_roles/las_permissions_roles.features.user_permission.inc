@@ -622,6 +622,52 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'use Rules component rules_las_flag_as_published'.
+  $permissions['use Rules component rules_las_flag_as_published'] = array(
+    'name' => 'use Rules component rules_las_flag_as_published',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_las_flag_as_request'.
+  $permissions['use Rules component rules_las_flag_as_request'] = array(
+    'name' => 'use Rules component rules_las_flag_as_request',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_las_unflag_as_draft'.
+  $permissions['use Rules component rules_las_unflag_as_draft'] = array(
+    'name' => 'use Rules component rules_las_unflag_as_draft',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'Student Supervisor' => 'Student Supervisor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_las_unflag_as_unpublished'.
+  $permissions['use Rules component rules_las_unflag_as_unpublished'] = array(
+    'name' => 'use Rules component rules_las_unflag_as_unpublished',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'use advanced search'.
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',

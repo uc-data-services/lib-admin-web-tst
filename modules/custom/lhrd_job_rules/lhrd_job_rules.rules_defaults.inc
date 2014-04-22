@@ -213,6 +213,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
       "IF" : [
         { "NOT flag_flagged_node" : {
@@ -238,6 +239,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
       "IF" : [
         { "NOT flag_flagged_node" : {
@@ -263,6 +265,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
       "IF" : [
         { "flag_flagged_node" : {
@@ -288,6 +291,7 @@ function lhrd_job_rules_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
       "IF" : [
         { "flag_flagged_node" : {
