@@ -564,6 +564,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
+    'created' => 'created',
+    'changed' => 'changed',
+    'name' => 'name',
+    'field_las_supervisor' => 'field_las_supervisor',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
     'field_las_workstudy' => 'field_las_workstudy',
@@ -581,6 +585,34 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_supervisor' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -859,6 +891,33 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['created']['label'] = 'Date Created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Date Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Requested By';
+  /* Field: Field: Supervisor */
+  $handler->display->display_options['fields']['field_las_supervisor']['id'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['table'] = 'field_data_field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -996,6 +1055,7 @@ function las_userdashboards_views_default_views() {
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
     'created' => 'created',
+    'changed' => 'changed',
     'name' => 'name',
     'field_las_supervisor' => 'field_las_supervisor',
     'field_unit' => 'field_unit',
@@ -1023,6 +1083,13 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1330,6 +1397,12 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Date Created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Date Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -2836,6 +2909,10 @@ function las_userdashboards_views_default_views() {
     t('User entity referenced from field_las_supervisor'),
     t('- Choose an operation -'),
     t('Title'),
+    t('Date Created'),
+    t('Date Updated'),
+    t('Requested By'),
+    t('Student Supervisor'),
     t('Department'),
     t('Classification'),
     t('Work Study'),
@@ -2851,9 +2928,6 @@ function las_userdashboards_views_default_views() {
     t('Search Terms'),
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
-    t('Date Created'),
-    t('Requested By'),
-    t('Student Supervisor'),
     t('Work Study Required?'),
     t('Chartstring Approved?'),
     t('YourStudentJobs'),
