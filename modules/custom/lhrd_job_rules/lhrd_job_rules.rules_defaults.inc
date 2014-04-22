@@ -39,7 +39,7 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail" : {
             "to" : [ "comment:node:author:mail" ],
             "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
-            "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\nRequested By: [comment:node:author]\\r\\n",
+            "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nComment Title: [comment:title]\\r\\nComment Body: [comment:body]\\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nRequested By: [comment:node:author]",
             "language" : [ "" ]
           }
         },
@@ -54,7 +54,7 @@ function lhrd_job_rules_default_rules_configuration() {
                 { "mail" : {
                     "to" : [ "comment:node:field-las-supervisor:mail" ],
                     "subject" : "Needs further review: Student Job [comment:node:nid] [comment:node:title]",
-                    "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nComments: [comment:body]\\r\\nRequested By: [comment:node:author]\\r\\n",
+                    "message" : "Please review and revise your recently submitted request, [comment:node:nid] [comment:node:title]. You may visit the job\\u2019s url ([comment:node:url]) to view the comments for details and make changes as needed. \\r\\n\\r\\nComment Title: [comment:title]\\r\\nComment Body: [comment:body]\\r\\n\\r\\nURL: [comment:node:url]\\r\\nJob ID: [comment:node:nid]\\r\\nJob Title: [comment:node:title]\\r\\nStudent Supervisor: [comment:node:field-las-supervisor]\\r\\nDepartment: [comment:node:field-unit]\\r\\nClassification: [comment:node:field-classification]\\r\\nRequested By: [comment:node:author]",
                     "language" : [ "" ]
                   }
                 },
