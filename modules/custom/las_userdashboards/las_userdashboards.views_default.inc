@@ -1342,7 +1342,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
@@ -2574,7 +2574,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
