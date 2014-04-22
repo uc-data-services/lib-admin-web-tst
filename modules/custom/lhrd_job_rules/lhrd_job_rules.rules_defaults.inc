@@ -208,6 +208,106 @@ function lhrd_job_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_las_flag_as_published'] = entity_import('rules_config', '{ "rules_las_flag_as_published" : {
+      "LABEL" : "Flag as Published",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
+      "IF" : [
+        { "NOT flag_flagged_node" : {
+            "flag" : "publish_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_flagnode" : {
+            "flag" : "publish_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 1
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_las_flag_as_request'] = entity_import('rules_config', '{ "rules_las_flag_as_request" : {
+      "LABEL" : "Flag as Request",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
+      "IF" : [
+        { "NOT flag_flagged_node" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_flagnode" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 1
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_las_unflag_as_draft'] = entity_import('rules_config', '{ "rules_las_unflag_as_draft" : {
+      "LABEL" : "Unflag as Draft",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
+      "IF" : [
+        { "flag_flagged_node" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_unflagnode" : {
+            "flag" : "unpublish_student_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 1
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_las_unflag_as_unpublished'] = entity_import('rules_config', '{ "rules_las_unflag_as_unpublished" : {
+      "LABEL" : "Unflag as Unpublished",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
+      "IF" : [
+        { "flag_flagged_node" : {
+            "flag" : "publish_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_unflagnode" : {
+            "flag" : "publish_job",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 1
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_lhrd_request_new_updated_student_job'] = entity_import('rules_config', '{ "rules_lhrd_request_new_updated_student_job" : {
       "LABEL" : "CreateNewStudentJob",
       "PLUGIN" : "reaction rule",
