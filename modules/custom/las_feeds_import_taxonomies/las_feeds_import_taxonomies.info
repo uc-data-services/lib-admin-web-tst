@@ -1,0 +1,17 @@
+name = Feeds Import Taxonomies
+description = A feature that contains the feeds import for taxonomies used in the site. 
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = las_feeds_import_taxonomies
+dependencies[] = features
+dependencies[] = feeds
+dependencies[] = feeds_ui
+dependencies[] = taxonomy
+dependencies[] = uuid_features
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = las_employee_type
+features[feeds_importer][] = las_hr_topics
+features[feeds_importer][] = resource_types_
+features_exclude[dependencies][ctools] = ctools
