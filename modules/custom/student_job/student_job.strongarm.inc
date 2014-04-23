@@ -120,13 +120,13 @@ function student_job_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '18',
+          'weight' => '20',
         ),
         'workflow' => array(
           'weight' => '17',
         ),
         'flag' => array(
-          'weight' => '19',
+          'weight' => '21',
         ),
       ),
       'display' => array(

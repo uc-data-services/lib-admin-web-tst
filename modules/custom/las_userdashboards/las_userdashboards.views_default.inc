@@ -332,7 +332,7 @@ function las_userdashboards_views_default_views() {
       ),
     ),
     'action::system_send_email_action' => array(
-      'selected' => 0,
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -564,6 +564,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
+    'created' => 'created',
+    'changed' => 'changed',
+    'name' => 'name',
+    'field_las_supervisor' => 'field_las_supervisor',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
     'field_las_workstudy' => 'field_las_workstudy',
@@ -581,6 +585,34 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_supervisor' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -705,6 +737,20 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::flag_node_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_published' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_request' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -796,15 +842,29 @@ function las_userdashboards_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'action::node_unpublish_action' => array(
+    'rules_component::rules_las_unflag_as_draft' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
     ),
+    'rules_component::rules_las_unflag_as_unpublished' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::node_unpublish_by_keyword_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -831,6 +891,33 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['created']['label'] = 'Date Created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Date Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Requested By';
+  /* Field: Field: Supervisor */
+  $handler->display->display_options['fields']['field_las_supervisor']['id'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['table'] = 'field_data_field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
+  $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -859,7 +946,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged']['label'] = 'Status';
+  $handler->display->display_options['fields']['flagged']['label'] = 'Job Requested?';
   $handler->display->display_options['fields']['flagged']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Requested';
   $handler->display->display_options['fields']['flagged']['type_custom_false'] = 'Draft';
@@ -876,7 +963,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_1';
-  $handler->display->display_options['fields']['flagged_1']['label'] = 'Published?';
+  $handler->display->display_options['fields']['flagged_1']['label'] = 'Job Published?';
+  $handler->display->display_options['fields']['flagged_1']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_1']['type_custom_true'] = 'Published';
+  $handler->display->display_options['fields']['flagged_1']['type_custom_false'] = 'Unpublished';
   $handler->display->display_options['fields']['flagged_1']['not'] = 0;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -965,13 +1055,16 @@ function las_userdashboards_views_default_views() {
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
     'created' => 'created',
+    'changed' => 'changed',
+    'name' => 'name',
+    'field_las_supervisor' => 'field_las_supervisor',
     'field_unit' => 'field_unit',
     'field_student_job_classification' => 'field_student_job_classification',
     'field_las_workstudy' => 'field_las_workstudy',
     'field_las_unit_chartstring' => 'field_las_unit_chartstring',
     'flagged_1' => 'flagged_1',
-    'field_las_supervisor' => 'field_las_supervisor',
     'flagged' => 'flagged',
+    'flagged_2' => 'flagged_2',
     'ops' => 'ops',
     'edit_node' => 'edit_node',
   );
@@ -990,6 +1083,27 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_supervisor' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1029,14 +1143,12 @@ function las_userdashboards_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_las_supervisor' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'flagged' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'flagged' => array(
+    'flagged_2' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1125,6 +1237,20 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::flag_node_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_published' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_request' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -1182,7 +1308,7 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::node_publish_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1216,15 +1342,29 @@ function las_userdashboards_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'action::node_unpublish_action' => array(
+    'rules_component::rules_las_unflag_as_draft' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
     ),
-    'action::node_unpublish_by_keyword_action' => array(
+    'rules_component::rules_las_unflag_as_unpublished' => array(
       'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1257,6 +1397,12 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Date Created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Date Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -1269,7 +1415,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Field: Department */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
@@ -1998,7 +2144,7 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::flag_node_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -2339,7 +2485,21 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::flag_node_action' => array(
-      'selected' => 1,
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_published' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_flag_as_request' => array(
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -2396,7 +2556,7 @@ function las_userdashboards_views_default_views() {
       'label' => '',
     ),
     'action::node_publish_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -2430,15 +2590,29 @@ function las_userdashboards_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'rules_component::rules_las_unflag_as_draft' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_las_unflag_as_unpublished' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::node_unpublish_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
     ),
     'action::node_unpublish_by_keyword_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -2501,7 +2675,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_supervisor']['field'] = 'field_las_supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['label'] = 'Student Supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
@@ -2735,28 +2909,27 @@ function las_userdashboards_views_default_views() {
     t('User entity referenced from field_las_supervisor'),
     t('- Choose an operation -'),
     t('Title'),
+    t('Date Created'),
+    t('Date Updated'),
+    t('Requested By'),
+    t('Student Supervisor'),
     t('Department'),
     t('Classification'),
     t('Work Study'),
     t('Chartstring'),
-    t('Status'),
+    t('Job Requested?'),
     t('Requested'),
     t('Draft'),
     t('Update Status'),
-    t('Published?'),
+    t('Job Published?'),
+    t('Published'),
+    t('Unpublished'),
     t('Edit'),
     t('Search Terms'),
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
-    t('Date Created'),
-    t('Requested By'),
-    t('Student Supervisor'),
     t('Work Study Required?'),
     t('Chartstring Approved?'),
-    t('Job Requested?'),
-    t('Job Published?'),
-    t('Published'),
-    t('Unpublished'),
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),
