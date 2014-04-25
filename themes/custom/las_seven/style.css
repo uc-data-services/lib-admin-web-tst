@@ -623,6 +623,10 @@ div.teaser-checkbox .form-item,
 }
 
 /* Filter */
+.page-node-add-job-student .ckeditor_links,
+.page-node-add-job-student .filter-wrapper {
+  display: none !important;
+}
 .filter-wrapper {
   border-top: 0;
   padding: 10px 2px;
