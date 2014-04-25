@@ -623,6 +623,8 @@ div.teaser-checkbox .form-item,
 }
 
 /* Filter */
+.node-type-job-student .ckeditor_links,
+.node-type-job-student .filter-wrapper,
 .page-node-add-job-student .ckeditor_links,
 .page-node-add-job-student .filter-wrapper {
   display: none !important;
