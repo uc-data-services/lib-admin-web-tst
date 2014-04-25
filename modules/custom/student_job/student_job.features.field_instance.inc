@@ -204,15 +204,10 @@ function student_job_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 25,
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'above',
@@ -230,19 +225,17 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_las_position_number',
     'label' => 'Position Number',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 2,
     ),
   );
@@ -347,7 +340,7 @@ function student_job_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Jobs must "require work study" for the first five days of posting. If a suitable candidate is not selected, then the job may be moved to "work study preferred."<br>If you are not requiring work study within the first five days of posting, then you must specify why. The Student Employment Coordinator will have to approve your choice before posting the job.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1096,6 +1089,7 @@ function student_job_field_default_field_instances() {
   t('How many students will be hired for this job?');
   t('If this job requires any specific work hours, enter them here.');
   t('Job Duties');
+  t('Jobs must "require work study" for the first five days of posting. If a suitable candidate is not selected, then the job may be moved to "work study preferred."<br>If you are not requiring work study within the first five days of posting, then you must specify why. The Student Employment Coordinator will have to approve your choice before posting the job.');
   t('Kronos Supervisor');
   t('Location Placeholder');
   t('Maximum Hours/Week');

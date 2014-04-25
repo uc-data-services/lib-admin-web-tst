@@ -781,16 +781,26 @@ function las_field_bases_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_las_position_number',
-    'field_permissions' => array(
-      'type' => 2,
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
     ),
-    'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_las_supervisor'
@@ -1031,8 +1041,8 @@ function las_field_bases_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Yes' => 'Yes',
-        'No' => 'No',
+        'Yes' => 'Work Study Required',
+        'No' => 'Work Study Preferred',
       ),
       'allowed_values_function' => '',
     ),
