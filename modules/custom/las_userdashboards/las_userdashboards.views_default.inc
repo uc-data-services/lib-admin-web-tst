@@ -420,8 +420,18 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = 'Edit CalNet Directory Profile';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   /* Field: User: CAS user name */
   $handler->display->display_options['fields']['cas_name']['id'] = 'cas_name';
   $handler->display->display_options['fields']['cas_name']['table'] = 'cas_user';
@@ -446,10 +456,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Field: User: Edit link */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -484,6 +490,7 @@ function las_userdashboards_views_default_views() {
     t('Edit link'),
     t('ManageUsersVBO'),
     t('UserInfo'),
+    t('Edit CalNet Directory Profile'),
     t('View panes'),
   );
   $export['las_dashboard_user_views'] = $view;

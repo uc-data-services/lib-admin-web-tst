@@ -999,3 +999,16 @@ div.add-or-remove-shortcuts {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
+
+/* Dashboard */
+li.views-row-first.views-row-last {
+  list-style-type: none;
+}
+li.views-row-first.views-row-last .views-field-name {
+  display: inline-block;
+  font-size: 1.385em;
+  font-weight: bold;
+}
+li.views-row-first.views-row-last .views-field-edit-node {
+  display: inline-block;
+}
