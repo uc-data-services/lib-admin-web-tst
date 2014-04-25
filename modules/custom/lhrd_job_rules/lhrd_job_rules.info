@@ -1,8 +1,8 @@
 name = LHRD Job Rules
-description = Job rules for LHRD
+description = Job rules and flags for LHRD
 core = 7.x
 package = Features
-version = 7.x-1.0-beta27
+version = 7.x-1.0-beta28
 project = lhrd_job_rules
 dependencies[] = comment
 dependencies[] = entity

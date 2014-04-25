@@ -1445,7 +1445,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_2';
-  $handler->display->display_options['fields']['flagged_1']['label'] = 'Chartstring Approved?';
+  $handler->display->display_options['fields']['flagged_1']['label'] = 'Approved by LBS?';
   $handler->display->display_options['fields']['flagged_1']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
@@ -2024,7 +2024,6 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
-    4 => '4',
     5 => '5',
   );
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -2328,8 +2327,8 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: CheckChartstringVBO */
-  $handler = $view->new_display('page', 'CheckChartstringVBO', 'page_3');
+  /* Display: LBSWorklistVBO */
+  $handler = $view->new_display('page', 'LBSWorklistVBO', 'page_3');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -2354,6 +2353,7 @@ function las_userdashboards_views_default_views() {
     'field_student_job_classification' => 'field_student_job_classification',
     'field_las_workstudy' => 'field_las_workstudy',
     'field_las_unit_chartstring' => 'field_las_unit_chartstring',
+    'field_las_position_number' => 'field_las_position_number',
     'field_las_supervisor' => 'field_las_supervisor',
     'ops' => 'ops',
     'edit_node' => 'edit_node',
@@ -2401,6 +2401,13 @@ function las_userdashboards_views_default_views() {
       'empty_column' => 0,
     ),
     'field_las_unit_chartstring' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_las_position_number' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -2669,6 +2676,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_unit_chartstring']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Position Number */
+  $handler->display->display_options['fields']['field_las_position_number']['id'] = 'field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['table'] = 'field_data_field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['field'] = 'field_las_position_number';
   /* Field: Field: Supervisor */
   $handler->display->display_options['fields']['field_las_supervisor']['id'] = 'field_las_supervisor';
   $handler->display->display_options['fields']['field_las_supervisor']['table'] = 'field_data_field_las_supervisor';
@@ -2682,7 +2693,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = 'Approve Chartstring';
+  $handler->display->display_options['fields']['ops']['label'] = 'Approve Job';
   $handler->display->display_options['fields']['ops']['link_type'] = 'normal';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -2729,17 +2740,17 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  $handler->display->display_options['path'] = 'admin/dashboard/check-chartstrings';
+  $handler->display->display_options['path'] = 'admin/dashboard/lbs-worklist';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Approve Chartstrings';
+  $handler->display->display_options['menu']['title'] = 'LBS Worklist';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: CheckChartstring */
-  $handler = $view->new_display('panel_pane', 'CheckChartstring', 'panel_pane_6');
+  /* Display: LBSWorklist */
+  $handler = $view->new_display('panel_pane', 'LBSWorklist', 'panel_pane_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Student Jobs with Unchecked Chartstrings';
+  $handler->display->display_options['title'] = 'Student Jobs to be Approved by LBS';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -2863,7 +2874,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = 'Approve Chartstring';
+  $handler->display->display_options['fields']['ops']['label'] = 'Approve Job';
   $handler->display->display_options['fields']['ops']['link_type'] = 'normal';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -2929,7 +2940,7 @@ function las_userdashboards_views_default_views() {
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
     t('Work Study Required?'),
-    t('Chartstring Approved?'),
+    t('Approved by LBS?'),
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),
@@ -2953,11 +2964,12 @@ function las_userdashboards_views_default_views() {
     t('There are currently no student jobs that meet your criteria.'),
     t('ChartstringsVBO'),
     t('Alias'),
-    t('CheckChartstringVBO'),
+    t('LBSWorklistVBO'),
     t('Date Published'),
-    t('Approve Chartstring'),
-    t('CheckChartstring'),
-    t('Student Jobs with Unchecked Chartstrings'),
+    t('Position Number'),
+    t('Approve Job'),
+    t('LBSWorklist'),
+    t('Student Jobs to be Approved by LBS'),
     t('flag'),
   );
   $export['las_dashboard_views'] = $view;

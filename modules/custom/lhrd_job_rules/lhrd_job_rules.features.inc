@@ -9,18 +9,18 @@
  */
 function lhrd_job_rules_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Is Chartstring Correct".
+  // Exported flag: "LBS Approval".
   $flags['las_lbschartstringcheck'] = array(
     'entity_type' => 'node',
-    'title' => 'Is Chartstring Correct',
+    'title' => 'LBS Approval',
     'global' => 1,
     'types' => array(
       0 => 'job_student',
     ),
-    'flag_short' => 'Approve Chartstring',
+    'flag_short' => 'Approve Job',
     'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Unapprove Chartstring',
+    'unflag_short' => 'Unapprove Job',
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',

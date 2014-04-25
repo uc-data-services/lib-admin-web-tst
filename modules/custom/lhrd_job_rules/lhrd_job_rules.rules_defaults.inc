@@ -112,7 +112,7 @@ function lhrd_job_rules_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "5" : "5" } },
             "subject" : "Ready for your review: Student Job [flagged-node:nid] [flagged-node:title]",
-            "message" : "Student Job [flagged-node:nid] [flagged-node:title] for the [flagged-node:field-unit] department was approved and is posted. Please visit the job request at [flagged-node:edit-url] to review and edit the chartstring ([flagged-node:field-las-unit-chartstring]) as needed."
+            "message" : "Student Job [flagged-node:nid] [flagged-node:title] for the [flagged-node:field-unit] department was approved and is posted. Please visit the job request at [flagged-node:edit-url] to review and approve the job.\\r\\n\\r\\nChartstring: [flagged-node:field-las-unit-chartstring]"
           }
         },
         { "mail" : {
