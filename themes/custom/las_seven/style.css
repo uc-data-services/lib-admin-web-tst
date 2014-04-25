@@ -1006,7 +1006,7 @@ li.views-row-first.views-row-last {
 }
 li.views-row-first.views-row-last .views-field-name {
   display: inline-block;
-  font-size: 1.385em;
+  font-size: 2em;
   font-weight: bold;
 }
 li.views-row-first.views-row-last .views-field-edit-node {
