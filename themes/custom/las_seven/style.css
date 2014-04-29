@@ -1013,6 +1013,6 @@ li.views-row-first.views-row-last .views-field-edit-node {
   display: inline-block;
 }
 
-div.vertical-tabs ul li.vertical-tab-button .summary{
+body.page-node-add-job-student div.vertical-tabs ul li.vertical-tab-button .summary {
   display: none;
 }
