@@ -1004,11 +1004,15 @@ div.add-or-remove-shortcuts {
 li.views-row-first.views-row-last {
   list-style-type: none;
 }
-li.views-row-first.views-row-last .views-field-name {
+div.view-id-las_dashboard_user_views li.views-row-first.views-row-last .views-field-name {
   display: inline-block;
   font-size: 2em;
   font-weight: bold;
 }
 li.views-row-first.views-row-last .views-field-edit-node {
   display: inline-block;
+}
+
+div.vertical-tabs ul li.vertical-tab-button .summary{
+  display: none;
 }
