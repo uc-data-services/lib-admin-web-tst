@@ -387,6 +387,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -487,7 +488,7 @@ function las_userdashboards_views_default_views() {
     t('Roles'),
     t('Department'),
     t('Created date'),
-    t('Edit link'),
+    t('Edit'),
     t('ManageUsersVBO'),
     t('UserInfo'),
     t('Edit CalNet Directory Profile'),
@@ -1439,7 +1440,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_workstudy']['id'] = 'field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
-  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study Required?';
+  $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -1469,7 +1470,7 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['flagged_2']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_2']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_2']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged_2']['label'] = 'Job Published?';
+  $handler->display->display_options['fields']['flagged_2']['label'] = 'Job Status';
   $handler->display->display_options['fields']['flagged_2']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_2']['type_custom_true'] = 'Published';
   $handler->display->display_options['fields']['flagged_2']['type_custom_false'] = 'Unpublished';
@@ -2946,8 +2947,8 @@ function las_userdashboards_views_default_views() {
     t('Search Terms'),
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
-    t('Work Study Required?'),
     t('Approved by LBS?'),
+    t('Job Status'),
     t('YourStudentJobs'),
     t('Your Student Jobs'),
     t('View More...'),

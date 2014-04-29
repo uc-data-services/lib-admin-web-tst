@@ -118,6 +118,17 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'create field_las_position_number'.
+  $permissions['create field_las_position_number'] = array(
+    'name' => 'create field_las_position_number',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create job_academic content'.
   $permissions['create job_academic content'] = array(
     'name' => 'create job_academic content',
@@ -420,6 +431,17 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit field_las_position_number'.
+  $permissions['edit field_las_position_number'] = array(
+    'name' => 'edit field_las_position_number',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own comments'.
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
@@ -429,6 +451,17 @@ function las_permissions_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'edit own field_las_position_number'.
+  $permissions['edit own field_las_position_number'] = array(
+    'name' => 'edit own field_las_position_number',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
   );
 
   // Exported permission: 'edit own job_academic content'.
@@ -737,6 +770,28 @@ function las_permissions_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view field_las_position_number'.
+  $permissions['view field_las_position_number'] = array(
+    'name' => 'view field_las_position_number',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_las_position_number'.
+  $permissions['view own field_las_position_number'] = array(
+    'name' => 'view own field_las_position_number',
+    'roles' => array(
+      'HR Analyst' => 'HR Analyst',
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
   );
 
   // Exported permission: 'view own unpublished content'.
