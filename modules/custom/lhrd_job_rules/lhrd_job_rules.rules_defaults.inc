@@ -208,8 +208,34 @@ function lhrd_job_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_las_flag_as_lbs_approved'] = entity_import('rules_config', '{ "rules_las_flag_as_lbs_approved" : {
+      "LABEL" : "Flag as LBS Approved",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "temp_jobtopublish" : { "label" : "JobToPublish", "type" : "node" } },
+      "IF" : [
+        { "NOT flag_flagged_node" : {
+            "flag" : "las_lbschartstringcheck",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_flagnode" : {
+            "flag" : "las_lbschartstringcheck",
+            "node" : [ "temp-jobtopublish" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 1
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_las_flag_as_published'] = entity_import('rules_config', '{ "rules_las_flag_as_published" : {
-      "LABEL" : "Flag as Published",
+      "LABEL" : "Publish Job(s)",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
@@ -235,7 +261,7 @@ function lhrd_job_rules_default_rules_configuration() {
     }
   }');
   $items['rules_las_flag_as_request'] = entity_import('rules_config', '{ "rules_las_flag_as_request" : {
-      "LABEL" : "Flag as Request",
+      "LABEL" : "Request Job(s)",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
@@ -261,7 +287,7 @@ function lhrd_job_rules_default_rules_configuration() {
     }
   }');
   $items['rules_las_unflag_as_draft'] = entity_import('rules_config', '{ "rules_las_unflag_as_draft" : {
-      "LABEL" : "Unflag as Draft",
+      "LABEL" : "Revert to Draft",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],
@@ -287,7 +313,7 @@ function lhrd_job_rules_default_rules_configuration() {
     }
   }');
   $items['rules_las_unflag_as_unpublished'] = entity_import('rules_config', '{ "rules_las_unflag_as_unpublished" : {
-      "LABEL" : "Unflag as Unpublished",
+      "LABEL" : "Unpublish Job(s)",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag" ],

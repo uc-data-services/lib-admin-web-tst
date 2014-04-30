@@ -1016,3 +1016,11 @@ li.views-row-first.views-row-last .views-field-edit-node {
 body.page-node-add-job-student div.vertical-tabs ul li.vertical-tab-button .summary {
   display: none;
 }
+
+body.page-node-add-job-student .field-name-field-lhrd-kronos-supervisor {
+  margin-left: 42px;
+}
+
+body.page-node-add-job-student .field-type-text-long {
+  margin-bottom: 23px;
+}
