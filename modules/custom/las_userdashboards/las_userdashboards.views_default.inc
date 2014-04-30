@@ -1583,6 +1583,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
+  /* Field: Content: Position Number */
+  $handler->display->display_options['fields']['field_las_position_number']['id'] = 'field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['table'] = 'field_data_field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['field'] = 'field_las_position_number';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -2826,6 +2830,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_las_workstudy']['table'] = 'field_data_field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['field'] = 'field_las_workstudy';
   $handler->display->display_options['fields']['field_las_workstudy']['label'] = 'Work Study';
+  /* Field: Content: Position Number */
+  $handler->display->display_options['fields']['field_las_position_number_1']['id'] = 'field_las_position_number_1';
+  $handler->display->display_options['fields']['field_las_position_number_1']['table'] = 'field_data_field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number_1']['field'] = 'field_las_position_number';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -3019,6 +3027,10 @@ function las_userdashboards_views_default_views() {
   $handler->display->display_options['fields']['field_unit']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Position Number */
+  $handler->display->display_options['fields']['field_las_position_number']['id'] = 'field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['table'] = 'field_data_field_las_position_number';
+  $handler->display->display_options['fields']['field_las_position_number']['field'] = 'field_las_position_number';
   /* Field: Content: Chartstring */
   $handler->display->display_options['fields']['field_las_unit_chartstring']['id'] = 'field_las_unit_chartstring';
   $handler->display->display_options['fields']['field_las_unit_chartstring']['table'] = 'field_data_field_las_unit_chartstring';
@@ -3096,6 +3108,7 @@ function las_userdashboards_views_default_views() {
     t('Search Terms'),
     t('ManageAllJobsVBO'),
     t('flag_chartstring'),
+    t('Position Number'),
     t('Approved by LBS?'),
     t('Job Status'),
     t('YourStudentJobs'),
@@ -3123,7 +3136,6 @@ function las_userdashboards_views_default_views() {
     t('Alias'),
     t('LBSWorklistVBO'),
     t('Date Published'),
-    t('Position Number'),
     t('Approve Job'),
     t('LBSWorklist'),
     t('Student Jobs to be Approved by LBS'),
