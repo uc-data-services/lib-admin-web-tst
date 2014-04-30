@@ -655,6 +655,16 @@ function las_permissions_roles_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'use Rules component rules_las_flag_as_lbs_approved'.
+  $permissions['use Rules component rules_las_flag_as_lbs_approved'] = array(
+    'name' => 'use Rules component rules_las_flag_as_lbs_approved',
+    'roles' => array(
+      'LBS Analyst' => 'LBS Analyst',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'use Rules component rules_las_flag_as_published'.
   $permissions['use Rules component rules_las_flag_as_published'] = array(
     'name' => 'use Rules component rules_las_flag_as_published',
