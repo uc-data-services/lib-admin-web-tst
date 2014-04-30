@@ -1013,14 +1013,17 @@ li.views-row-first.views-row-last .views-field-edit-node {
   display: inline-block;
 }
 
-body.page-node-add-job-student div.vertical-tabs ul li.vertical-tab-button .summary {
+body.page-node-add-job-student div.vertical-tabs ul li.vertical-tab-button .summary,
+body.page-node-edit.node-type-job-student div.vertical-tabs ul li.vertical-tab-button .summary {
   display: none;
 }
 
-body.page-node-add-job-student .field-name-field-lhrd-kronos-supervisor {
+body.page-node-add-job-student .field-name-field-lhrd-kronos-supervisor,
+body.page-node-edit.node-type-job-student .field-name-field-lhrd-kronos-supervisor {
   margin-left: 42px;
 }
 
-body.page-node-add-job-student .field-type-text-long {
+body.page-node-add-job-student .field-type-text-long,
+body.page-node-edit.node-type-job-student .field-type-text-long {
   margin-bottom: 23px;
 }
