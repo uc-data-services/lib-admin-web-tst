@@ -7,7 +7,7 @@
 function las_dev_install() {
   // Enable some las_dev blocks.
   $default_theme = 'skeleton_lhrd';
-  $admin_theme = 'seven';
+  $admin_theme = 'las_seven';
   // disable all themes
   db_update('system')
     ->fields(array('status' => 0))
