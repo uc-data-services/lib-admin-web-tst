@@ -1018,6 +1018,12 @@ body.page-node-edit.node-type-job-student div.vertical-tabs ul li.vertical-tab-b
   display: none;
 }
 
+body.page-node-add-job-student .field-name-field-las-new-chrtstrg,
+body.page-node-edit.node-type-job-student .field-name-field-las-new-chrtstrg,
+body.page-node-add-job-student .field-name-field-las-unit-chartstring,
+body.page-node-edit.node-type-job-student .field-name-field-las-unit-chartstring,
+body.page-node-add-job-student .field-name-field-las-workstudy-whynot,
+body.page-node-edit.node-type-job-student .field-name-field-las-workstudy-whynot,
 body.page-node-add-job-student .field-name-field-lhrd-kronos-supervisor,
 body.page-node-edit.node-type-job-student .field-name-field-lhrd-kronos-supervisor {
   margin-left: 42px;

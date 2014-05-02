@@ -53,7 +53,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -145,7 +145,7 @@ function student_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -225,18 +225,19 @@ function student_job_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_las_position_number',
     'label' => 'Position Number',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 10,
     ),
   );
 
@@ -283,7 +284,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -327,7 +328,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -375,7 +376,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -420,7 +421,7 @@ function student_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -433,7 +434,7 @@ function student_job_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Choose "Yes" if you will be approving the student\'s timecard. Otherwise, choose "No" and specify the designated timecard supervisor.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -457,7 +458,7 @@ function student_job_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_lhrd_krns_is_stdn_super',
-    'label' => 'Are you the Kronos Supervisor?',
+    'label' => 'Are you the Timecard Supervisor?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -467,7 +468,7 @@ function student_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -476,7 +477,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Choose the designated timecard supervisor from the list.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -502,7 +503,7 @@ function student_job_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_lhrd_kronos_supervisor',
-    'label' => 'Kronos Supervisor',
+    'label' => 'Timecard Supervisor',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -514,7 +515,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -560,7 +561,7 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -569,7 +570,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'What tasks will students be required to complete?',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -1072,15 +1073,17 @@ function student_job_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Add a new chartstring?');
-  t('Are you the Kronos Supervisor?');
+  t('Are you the Timecard Supervisor?');
   t('Chartstring');
+  t('Choose "Yes" if you will be approving the student\'s timecard. Otherwise, choose "No" and specify the designated timecard supervisor.');
+  t('Choose the designated timecard supervisor from the list.');
   t('Classification');
   t('Department');
   t('Desired Qualifications');
@@ -1090,7 +1093,6 @@ function student_job_field_default_field_instances() {
   t('If this job requires any specific work hours, enter them here.');
   t('Job Duties');
   t('Jobs must "require work study" for the first five days of posting. If a suitable candidate is not selected, then the job may be moved to "work study preferred."<br>If you are not requiring work study within the first five days of posting, then you must specify why. The Student Employment Coordinator will have to approve your choice before posting the job.');
-  t('Kronos Supervisor');
   t('Location Placeholder');
   t('Maximum Hours/Week');
   t('Minimum Hours/Shift');
@@ -1107,7 +1109,7 @@ function student_job_field_default_field_instances() {
   t('The maximum number of hours per week this job requires. Students can work a maximum of 16 hours per week, or 40 hours per week during Summer.');
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
-  t('What tasks will students be required to complete?');
+  t('Timecard Supervisor');
   t('Why does this job not require work study?');
   t('Your chartstring will be forwarded to Library Business Services for adding to the system. ');
 

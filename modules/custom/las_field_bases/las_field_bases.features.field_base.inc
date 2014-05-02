@@ -781,6 +781,9 @@ function las_field_bases_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_las_position_number',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
