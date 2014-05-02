@@ -22,10 +22,10 @@ function index_panels_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
+      'las_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'las_seven',
         'weight' => 0,
       ),
       'skeleton_lhrd' => array(
@@ -55,10 +55,10 @@ function index_panels_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
+      'las_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'las_seven',
         'weight' => 0,
       ),
       'skeleton_lhrd' => array(
@@ -88,10 +88,10 @@ function index_panels_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
+      'las_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'las_seven',
         'weight' => 0,
       ),
       'skeleton_lhrd' => array(
@@ -121,10 +121,10 @@ function index_panels_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'seven' => array(
+      'las_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'las_seven',
         'weight' => 0,
       ),
       'skeleton_lhrd' => array(
