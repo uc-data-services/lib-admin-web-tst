@@ -15,7 +15,7 @@ function student_job_field_default_field_instances() {
     'bundle' => 'job_student',
     'default_value' => array(
       0 => array(
-        'value' => 1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
@@ -43,7 +43,7 @@ function student_job_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_las_add_new_chartstring',
-    'label' => 'Add a new chartstring?',
+    'label' => 'Use Existing Chartstring?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1079,7 +1079,6 @@ function student_job_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add a new chartstring?');
   t('Are you the Timecard Supervisor?');
   t('Chartstring');
   t('Choose "Yes" if you will be approving the student\'s timecard. Otherwise, choose "No" and specify the designated timecard supervisor.');
@@ -1110,6 +1109,7 @@ function student_job_field_default_field_instances() {
   t('The minimum number of hours per shift this job requires.');
   t('The minimum number of hours per week this job requires.');
   t('Timecard Supervisor');
+  t('Use Existing Chartstring?');
   t('Why does this job not require work study?');
   t('Your chartstring will be forwarded to Library Business Services for adding to the system. ');
 

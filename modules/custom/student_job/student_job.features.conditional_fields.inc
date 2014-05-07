@@ -172,10 +172,10 @@ function student_job_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 1,
+      'value_form' => 0,
       'value' => array(
         0 => array(
-          'value' => 1,
+          'value' => 0,
         ),
       ),
       'values' => array(),
@@ -311,6 +311,27 @@ function student_job_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        10 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
         6 => array(
           1 => 1,
           2 => 2,
@@ -318,7 +339,21 @@ function student_job_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        4 => array(
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        12 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        11 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -326,6 +361,13 @@ function student_job_conditional_fields_default_fields() {
           4 => 0,
         ),
         5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -354,15 +396,39 @@ function student_job_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        10 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
         6 => array(
           1 => 1,
           3 => 0,
         ),
-        4 => array(
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        12 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        11 => array(
           1 => 1,
           3 => 0,
         ),
         5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        4 => array(
           1 => 1,
           3 => 0,
         ),
@@ -373,10 +439,10 @@ function student_job_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 0,
+      'value_form' => 1,
       'value' => array(
         0 => array(
-          'value' => 0,
+          'value' => 1,
         ),
       ),
       'values' => array(),
