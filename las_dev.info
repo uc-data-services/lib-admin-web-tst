@@ -119,6 +119,7 @@ dependencies[] = ckeditor
 ; Views
 dependencies[] = views
 dependencies[] = views_bulk_operations
+dependencies[] = views_data_export
 dependencies[] = views_ui
 dependencies[] = view_unpublished
 ; Features / Features extra

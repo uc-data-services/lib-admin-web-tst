@@ -160,6 +160,9 @@ projects[uuid_features][version] = "1.0-alpha4"
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
 
+projects[views_data_export][subdir] = "contrib"
+projects[views_data_export][version] = "3.0-beta7"
+
 ; Themes
 projects[omega][subdir] = "contrib"
 projects[omega][version] = "3.1"
