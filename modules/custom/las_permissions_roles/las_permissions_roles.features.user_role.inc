@@ -64,5 +64,11 @@ function las_permissions_roles_user_default_roles() {
     'weight' => 6,
   );
 
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => 11,
+  );
+
   return $roles;
 }
