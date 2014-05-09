@@ -116,7 +116,7 @@ function student_job_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
     'field_student_job_classification' => 'field_student_job_classification',
-    'field_student_job_workstudy' => 'field_student_job_workstudy',
+    'field_las_workstudy' => 'field_las_workstudy',
     'field_unit' => 'field_unit',
     'created' => 'created',
   );
@@ -136,14 +136,16 @@ function student_job_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_student_job_workstudy' => array(
+    'field_las_workstudy' => array(
       'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => 'views-align-center',
+      'default_sort_order' => 'asc',
+      'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_unit' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
       'align' => 'views-align-left',
       'separator' => '',
       'empty_column' => 0,
